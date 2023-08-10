@@ -1,0 +1,77 @@
+<div class="n-overlay" [ngClass]="{ open: isOpen }">
+  <div class="n-component">
+    <div class="n-contact-header">
+      <img
+        src="assets/images/traceline-logo-footer.png"
+        class="n-contact-logo"
+        alt="traceline"
+      />
+      <button class="n-close-button" (click)="closeComponent()">Close</button>
+    </div>
+    <div class="n-text-contact">
+        <div class="n-text-lets-talk">
+          <span class="n-lets-talk">Let’s talk.</span>
+          <span class="n-fill-in-the-form">
+            Fill in the form, or, if you prefer,
+            <br/>
+            <a target="_blank" href="mailto:info@netcon.in"
+              >send us an email.</a
+            >
+          </span>
+        </div>
+        <div class="n-vertical-line"></div>
+      <div class="n-form-right">
+        <div *ngIf="!isSubmitted">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="n-form-container">
+              <label for="n-name" class="n-label">Your name</label>
+              <input
+                class="n-input-contact"
+                type="text"
+                id="n-name"
+                placeholder="John Appleseed"
+                formControlName="name"
+              />
+              <label for="n-email" class="n-label">Email</label>
+              <input
+                type="text"
+                class="n-input-contact"
+                id="n-email"
+                placeholder="john@widet.co"
+                formControlName="email"
+              />
+              <button
+                class="n-button-contact"
+                [disabled]="
+                  isLoading ||
+                  isFormSubmitted ||
+                  (contactForm.dirty && contactForm.invalid)
+                "
+              >
+                <span *ngIf="!isLoading">Submit</span>
+                <span *ngIf="isLoading">
+                  Loading...
+                  <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="isSubmitted">
+          <div class="n-request-message">
+            <div>Yay!</div>
+            <div>
+              Your request has been sent. Someone nice from our team will reach
+              out to you quicker than you’d think.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

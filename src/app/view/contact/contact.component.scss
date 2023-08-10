@@ -1,0 +1,107 @@
+.n-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: bottom;
+  opacity: 1;
+}
+
+.n-overlay.open {
+  transform: scaleY(1);
+}
+
+.n-component {
+  width: 100%;
+  .n-contact-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    .n-contact-logo {
+      margin-left: 20px;
+      width: 175px;
+    }
+    .n-close-button {
+      border-radius: 30px;
+      margin-right: 20px;
+      width: 100px;
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+    }
+  }
+}
+
+.n-text-contact {
+  display: flex;
+  flex-direction: row;
+  margin: 80px auto 0px;
+  width: 90%;
+  gap: 2%;
+  .n-text-lets-talk {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    align-items: center;
+    justify-content: center;
+    .n-lets-talk {
+      color: white;
+      font-size: 56px;
+      line-height: 64px;
+    }
+    .n-fill-in-the-form {
+      color: white;
+      font-size: 32px;
+      line-height: 48px;
+      text-align: center;
+    }
+  }
+  .n-vertical-line{
+    width: 2px;
+    height: 400px;
+    background-color: #fff;
+  }
+  .n-form-right {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .n-form-container {
+      display: flex;
+      flex-direction: column;
+      .n-label {
+        color: white;
+        font-size: 26px;
+        line-height: 32px;
+        width: 330px;
+      }
+      .n-input-contact{
+        width: 330px;
+    padding: 10px 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: none;
+      }
+      .n-button-contact{
+        width: 383px;
+        padding: 10px 0px;
+        margin-top: 20px;
+        background-color: #fff;
+      }
+    }
+    .n-request-message{
+        color: white;
+        font-size: 32px;
+        line-height: 48px;
+        text-align: center;
+    }
+  }
+}

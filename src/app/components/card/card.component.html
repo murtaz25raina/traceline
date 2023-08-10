@@ -1,0 +1,14 @@
+<div class="n-card-container" [ngStyle]="cardContent.cardStyle">
+<div class="n-card-heading">
+ {{cardContent.heading}}
+</div>
+<div class="n-card-description">
+    {{cardContent.description}}
+</div>
+<div class="n-we-can-help-you">
+    We can help you with:
+</div>
+<ul class="n-card-list">
+    <li *ngFor="let list of cardContent.list">{{list}}</li>
+</ul>
+</div>

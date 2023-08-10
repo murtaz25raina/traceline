@@ -1,0 +1,197 @@
+.n-contactus-footer {
+  width: 100%;
+  background-color: #000;
+  margin-top: 154px;
+  padding: 1px 0px;
+  .n-traceline-logo-footer {
+    width: 261.39px;
+    height: 64px;
+    margin-top: 72px;
+    margin-left: 96px;
+  }
+
+  .n-footer-contact {
+    display: flex;
+    flex-direction: row;
+    max-width: 1248px;
+    margin-left: 96px;
+    justify-content: space-between;
+    margin-top: 70.28px;
+    .n-contact-fetch-email {
+      display: flex;
+      flex-direction: row;
+      column-gap: 14px;
+      .n-thank-you{
+        color: white;
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 64px;
+      }
+      .n-we-will-email-you {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px; /* 100% */
+      }
+      .n-question-pricing {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        margin-top: 6px;
+        line-height: 26px; /* 216.667% */
+      }
+      .n-email-input-button {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        height: fit-content;
+        .n-email-input {
+          color: #fff;
+          font-family: Lab Grotesque;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 26px; /* 162.5% */
+          width: 328.234px;
+          max-height: 48px;
+          background: #0d0e10;
+          padding: 9px 25px 13px;
+          border: 1px solid white;
+          &::placeholder {
+            color: #fff;
+            font-family: Lab Grotesque;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px; /* 162.5% */
+          }
+        }
+        .n-email-submit-button {
+          width: 202.107px;
+          height: 53.7px;
+          border-radius: 0px 6px 6px 0px;
+          background: #ffda00;
+          cursor: pointer;
+          color: #000;
+          text-align: center;
+          font-family: Lab Grotesque;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 16px; /* 100% */
+        }
+      }
+    }
+    .n-contact-info {
+      .n-contact-text {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px; /* 216.667% */
+      }
+      .n-contact-email {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px; /* 150% */
+        margin-top: 5.8px;
+      }
+      .n-contact-phone {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 30px; /* 150% */
+        margin-top: 8px;
+      }
+      .n-social-text {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        margin-top: 25px;
+        line-height: 26px; /* 216.667% */
+      }
+      .n-linkedin-twitter {
+        display: flex;
+        flex-direction: row;
+        column-gap: 11px;
+        margin-top: 5.8px;
+        .n-linkedin {
+          width: 32px;
+          height: 32px;
+        }
+        .n-twitter {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  .n-footer-bottom {
+    margin: 59.27px 0px 0px 96px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1248px;
+    .n-policy-copyright {
+      row-gap: 12px;
+      display: flex;
+      flex-direction: column;
+      .n-policies {
+        display: flex;
+        flex-direction: row;
+        column-gap: 59px;
+        .n-policy {
+          color: #fff;
+          font-family: Lab Grotesque;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 26px; /* 216.667% */
+          text-decoration-line: underline;
+        }
+      }
+      .n-copyright {
+        color: #fff;
+        font-family: Lab Grotesque;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 26px; /* 216.667% */
+      }
+    }
+    .n-powered-by-netcon {
+      color: #fff;
+      text-align: right;
+      font-family: Lab Grotesque;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 26px; /* 216.667% */
+      text-decoration-line: underline;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+  .n-footer-horizontal-line {
+    width: 1248px;
+    height: 1px;
+    background-color: #fff;
+    margin: 56px auto 186px;
+  }
+}
