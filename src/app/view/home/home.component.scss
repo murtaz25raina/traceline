@@ -904,6 +904,7 @@ margin: 30px 20px 0px;
     }
     .n-three-people-looking-at-tablet{
       width: 100%;
+      height: 300px;
     }
   }
 
@@ -977,7 +978,7 @@ margin: 96px 20px 0px;
  border-radius: 64px 64px 0px 0px;
 }
 .n-card-text{
-margin: 30px 20px 0px;
+margin: 0px 20px;
 .n-we-can-help-you-list{
   margin-bottom: 60px;
 }
@@ -1005,7 +1006,7 @@ margin: 30px 20px 0px;
     border-radius: 64px 64px 0px 0px;
   }
   .n-card-text-2{
-    margin: 30px 20px 0px;
+    margin: 0px 20px;
     .n-we-can-help-you-list{
       margin-bottom: 60px;
     }
@@ -1028,4 +1029,8 @@ margin: 30px 20px 0px;
 
 
   
-  
+  @media (max-width: 450px) {
+    .n-page-logo-contact.n-make-header{
+      font-size: 11px;
+    }
+  }
