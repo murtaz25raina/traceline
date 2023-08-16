@@ -24,6 +24,22 @@ export class ContactUsFooterComponent{
       private updateFormSubmittedStatus(): void {
         this.isFormSubmitted = this.sharedService.isSubscribeFormSubmitted;
       }
+
+      openLinkedin=()=>{
+        window.open("https://www.linkedin.com/company/netcon-technologies","_blank")
+      }
+
+      openTwitter = () =>{
+        window.open('https://twitter.com/Netcondigital','_blank')
+      }
+
+      privacyPolicy = () =>{
+        window.open("https://netcontechnologies.com/privacy_policy","_blank");
+      }
+
+      cookiesPolicy = () =>{
+        window.open("https://netcontechnologies.com/cookie_policy","_blank");
+      }
     
       onSubscribe(): void {
         if (this.email.valid && (typeof this.email.value === 'string')) {

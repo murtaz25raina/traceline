@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { REGEX_PATTERNS } from "src/app/constants/constants";
 import { SharedService } from "src/app/services/shared.service";
@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
     styleUrls:['./contact.component.scss']
 })
 export class ContactComponent implements OnInit{
+  @Input() showFixedHeaderFunction: (() => void) | undefined;
+
   isOpen: boolean = false;
   contactForm!: FormGroup;
 
@@ -23,6 +25,7 @@ export class ContactComponent implements OnInit{
     private formBuilder: FormBuilder,
     private location: Location
   ) {
+    // this.showFixedHeaderFunction = () => {};
     this.updateFormSubmittedStatus();
   }
 
@@ -83,4 +86,10 @@ export class ContactComponent implements OnInit{
     this.location.back();
   }
 
+  showFixedHeader() {
+    if (this.showFixedHeaderFunction) {
+      this.showFixedHeaderFunction();
+    }
+  }
+  
 }

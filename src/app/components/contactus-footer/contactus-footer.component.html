@@ -41,16 +41,16 @@
             <div class="n-contact-phone">Phone : <u>+91 99524 00291</u></div>
             <div class="n-social-text">Social</div>
             <div class="n-linkedin-twitter">
-            <img src="assets/images/linkedin.png" alt="linkedin" class="n-linkedin"/>
-            <img src="assets/images/twitter.png" alt="twitter" class="n-twitter" />
+            <img src="assets/images/linkedin.png" alt="linkedin" class="n-linkedin" (click)="openLinkedin()" />
+            <img src="assets/images/twitter.png" alt="twitter" class="n-twitter" (click)="openTwitter()" />
             </div>
         </div>
     </div>
     <div class="n-footer-bottom">
         <div class="n-policy-copyright">
             <div class="n-policies">
-                <span class="n-policy">Privacy Policy</span>
-                <span class="n-policy">Cookies Policy</span>
+                <span class="n-policy" (click)="privacyPolicy()">Privacy Policy</span>
+                <span class="n-policy" (click)="cookiesPolicy()">Cookies Policy</span>
             </div>
             <div class="n-copyright">© Copyright 2022 Netcon Technologies. All rights reserved. All logos and trademarks used belong to their respective owners.</div>
         </div>

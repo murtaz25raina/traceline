@@ -15,6 +15,7 @@
     flex-direction: row;
     max-width: 1248px;
     margin-left: 96px;
+    margin-right: 96px;
     justify-content: space-between;
     margin-top: 70.28px;
     .n-contact-fetch-email {
@@ -133,17 +134,19 @@
         .n-linkedin {
           width: 32px;
           height: 32px;
+          cursor: pointer;
         }
         .n-twitter {
           width: 32px;
           height: 32px;
+          cursor: pointer;
         }
       }
     }
   }
 
   .n-footer-bottom {
-    margin: 59.27px 0px 0px 96px;
+    margin: 59.27px 96px 0px 96px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -164,6 +167,7 @@
           font-weight: 400;
           line-height: 26px; /* 216.667% */
           text-decoration-line: underline;
+          cursor: pointer;
         }
       }
       .n-copyright {
@@ -193,5 +197,91 @@
     height: 1px;
     background-color: #fff;
     margin: 56px auto 186px;
+  }
+}
+@media (max-width: 1250px) {
+  .n-contactus-footer{
+   .n-traceline-logo-footer{
+    margin-left: 20px;
+    width: 140px;
+    height: 35px;
+  }
+  .n-footer-contact{
+    margin-left: 20px;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 30px;
+    margin-right: 20px;
+    .n-contact-fetch-email{
+      flex-direction: column;
+      gap: 20px;
+       .n-email-input-button{
+       .n-email-input{
+        width: 70%;
+        min-width: 160px;
+       }
+       .n-email-submit-button{
+        width: 30%;
+        min-width: 100px;
+
+       }
+      }
+    }
+  }
+  .n-footer-bottom{
+    flex-wrap: wrap;
+    margin-left: 20px;
+    gap: 20px;
+    margin-right: 20px;
+  }
+  }
+  .n-footer-horizontal-line {
+    max-width: 100% !important;
+    width: auto !important;
+    margin:56px 20px 80px !important;
+  }
+}
+
+
+@media (max-width: 850px) {
+  .n-contactus-footer{
+   .n-traceline-logo-footer{
+    margin-left: 20px;
+    width: 140px;
+    height: 35px;
+  }
+  .n-footer-contact{
+    margin-left: 20px;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 30px;
+    margin-right: 20px;
+    .n-contact-fetch-email{
+      flex-direction: column;
+      gap: 20px;
+       .n-email-input-button{
+       .n-email-input{
+        width: 70%;
+        min-width: 160px;
+       }
+       .n-email-submit-button{
+        width: 30%;
+        min-width: 100px;
+
+       }
+      }
+    }
+  }
+  .n-footer-bottom{
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 20px;
+    margin-right: 20px;
+  }
+  }
+  .n-footer-horizontal-line {
+    max-width: 100% !important;
+    width: auto !important;
+    margin:56px 20px 80px !important;
   }
 }

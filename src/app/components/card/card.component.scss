@@ -1,5 +1,5 @@
 .n-card-container {
-  width: 608px;
+  width: 100%;
   height: 832px;
   border-radius: 64px;
   padding: 1px 0px;
@@ -14,6 +14,7 @@
     letter-spacing: -0.96px;
     margin-top: 88px;
     margin-left: 40px;
+    margin-right: 40px;
   }
   .n-we-can-help-you {
     color: #fff;
@@ -46,4 +47,67 @@
     margin-left: 40px;
     line-height: 28px; /* 155.556% */
   }
+}
+@media (max-width: 1250px) {
+  .n-card-container{
+    // min-width: 480px;
+    width: auto;
+    min-height: 650px;
+    height: auto;
+    .n-card-heading{
+      margin-top: 60px;
+      margin-left: 20px;
+      margin-right: 20px;
+      font-size: 25px;
+      line-height: 40px;
+    }
+    .n-card-description{
+      margin-left: 20px;
+      font-size: 15px;
+      margin-right: 15px;
+    }
+    .n-we-can-help-you{
+      margin-left: 20px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    .n-card-list{
+      font-size: 20px;
+      margin-left: 10px;
+      margin-bottom: 60px;
+    }
+  }
+  }
+
+
+@media (max-width: 850px) {
+.n-card-container{
+  width: 100%;
+  min-height: 500px;
+  height: auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  .n-card-heading{
+    margin-top: 60px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 25px;
+    line-height: 40px;
+  }
+  .n-card-description{
+    margin-left: 15px;
+    font-size: 15px;
+    margin-right: 15px;
+  }
+  .n-we-can-help-you{
+    margin-left: 15px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .n-card-list{
+    font-size: 15px;
+    margin-left: 15px;
+    margin-bottom: 60px;
+  }
+}
 }

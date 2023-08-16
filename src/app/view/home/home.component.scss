@@ -1,15 +1,39 @@
 .n-container {
   background-color: #ffda00;
+  padding: 1px 0px;
 }
 
 .n-page-logo-contact {
-  margin: 0px 96px;
+  margin: 96px 96px 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  .n-page-logo {
-    margin-top: 96px;
+  .n-contact-fixed-header{
+    color: #fff;
+    font-size: 18px;
+    font-weight:500;
   }
+  .n-page-logo {
+    // margin-top: 96px;
+  }
+}
+
+.n-page-logo-contact.n-make-header {
+  box-shadow: 0 1px 4px 0 rgba(255, 255, 255, 0.2);
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-color: #000000;
+  max-width: 85%;
+  margin: 0px auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  border-radius: 999px;
+  height: 48px;
 }
 
 .n-contact-button {
@@ -28,7 +52,7 @@
   letter-spacing: -0.36px;
   border-radius: 45px;
   background: #000;
-  margin-top: 102px;
+  // margin-top: 102px;
   cursor: pointer;
 }
 
@@ -41,6 +65,9 @@
   line-height: 65px;
   margin-top: 104px;
   margin-left: 96px;
+}
+.n-power-it-with-traceline.n-page-heading-mt-268{
+  margin-top: 264px;
 }
 
 .n-page-top-image {
@@ -154,6 +181,9 @@
   font-weight: 500;
   line-height: 64px;
   letter-spacing: -0.96px;
+  #paragraph-container span {
+    color: #86868b; 
+  }
 }
 
 .n-text-number-container {
@@ -173,7 +203,7 @@
     line-height: 96px;
     letter-spacing: -0.8px;
   }
-  .n-attribute {
+  .n-attribute-text {
     color: #86868b;
     text-align: right;
     font-family: Graphik;
@@ -212,10 +242,11 @@
   margin: 96px 96px 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 58px;
   border-radius: 64px;
   background: #fff;
-  width: 1248px;
+  max-width: 1248px;
   max-height: 664px;
   .n-card-text {
     margin: 96px 0px 84px 82px;
@@ -261,6 +292,7 @@
   .n-guy-with-tablet {
     width: 506px;
     height: 664px;
+    margin-right: 0px;
   }
 }
 
@@ -290,17 +322,18 @@
   margin: 96px 96px 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 58px;
   border-radius: 64px;
   background: #fff;
-  width: 1248px;
+  max-width: 1248px;
   max-height: 664px;
   .n-ship-carrying-goods {
     width: 508px;
     height: 664px;
+    margin-right: 0px;
   }
   .n-card-text-2 {
-    margin: 100px 82px 136px 0px;
+    margin: 100px 20px 136px;
     .n-streamline-supply {
       max-width: 530px;
       color: #000;
@@ -354,6 +387,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 65px; /* 135.417% */
+    margin: auto;
   }
   .n-with-traceline {
     max-width: 847px;
@@ -364,7 +398,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 140% */
-    margin-top: 16px;
+    margin: 16px auto 0px;
   }
   .n-three-people-looking-at-tablet {
     border-radius: 32px;
@@ -375,9 +409,10 @@
 }
 
 .n-roi-swinging-doodle {
-  gap: 117.69px;
-  width: fit-content;
-  margin: 201px auto 0px;
+  // gap: 117.69px;
+  max-width: 1266.07px;
+  justify-content: space-between;
+  margin: 201px 77px 0px;
   .n-swinging-doodles {
     gap: 80px;
     .n-swinging-doodle {
@@ -422,7 +457,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 140% */
-    max-width: 565.4px;
+    max-width: 470px;
     margin-top: 16px;
   }
 }
@@ -467,3 +502,530 @@
   margin-top: 50px;
 }
 }
+
+.n-card-holder{
+  margin: 0px 96px;
+  justify-content: center;
+  gap: 4%;
+  max-width: 1248px;
+  .n-app-card{
+    width: 48%;
+  }
+}
+
+@media (max-width: 1250px) {
+  .n-page-logo-contact{
+    margin: 96px 40px 0px;
+    .n-page-logo{
+    width: 200px;
+    }
+    .n-contact-button{
+      padding: 16px 38px;
+    font-size: 20px;
+    }
+    .n-contact-fixed-header{
+     font-size: 12px; 
+    }
+  }
+  .n-page-logo-contact.n-make-header{
+    max-width: 100%;
+    top: 15px;
+    left: 40px;
+    right: 40px;
+  }
+  .n-power-it-with-traceline{
+    margin-left: 40px;
+    font-size: 42px;
+  }
+  .n-power-it-with-traceline.n-page-heading-mt-251{
+    margin-top: 146px;
+  }
+  
+  .n-about-traceline{
+    margin-left: 40px;
+    font-size: 20px;
+    margin-right: 40px;
+    max-width: fit-content;
+    .n-complete{
+      font-size: 20px;
+    }
+
+  }
+  
+  .n-free-call{
+    margin-left: 40px;
+    padding: 16px 38px;
+    font-size: 20px;
+  }
+  .n-arrow-down{
+    margin-left: 42px;
+  }
+  
+  .n-traceline-points{
+    margin-left: 40px;
+    font-size: 17px;
+    .n-traceline-point-text{
+      font-size: 17px;
+    }
+  }
+  
+  .n-trusted-by-the-best{
+    font-size: 20px !important;
+  }
+  
+  .n-partners{
+    margin: 32px 20px 0px !important;
+  }
+  
+  .n-text-number-container{
+    margin: 64px 40px 58.32px 40px;
+    // flex-direction: column;
+    gap: 25px;
+  }
+  
+  .n-every-machine{
+  font-size: 35px;
+  max-width: 80%;
+  }
+  
+  .n-attributes{
+    // flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    .n-attribute{
+      align-items: center;
+   .n-attribute-numbers{
+    font-size: 42px;
+    text-align: center;
+   }
+   .n-attribute-text{
+    font-size: 15px;
+    text-align: center;
+   }
+    }
+  }
+  
+  .n-not-every-tool{
+      font-size: 40px;
+  }
+  .n-traceline-consolidates{
+   font-size: 20px;
+   margin: 16px auto 0px;
+  }
+
+
+  .n-card-holder{
+    margin: 0px 40px;
+  }
+
+
+  .n-good-news-with-traceline{
+    padding: 0px 40px;
+    .n-good-news{
+      font-size: 30px;
+    }
+    .n-with-traceline{
+      font-size: 20px;
+    }
+    .n-three-people-looking-at-tablet{
+      width: 100%;
+    }
+  }
+
+  .n-game-changer-sundaram{
+    margin-left: 60px;
+    .n-game-changer{
+      font-size: 30px;
+    }
+    .n-sundaram{
+      font-size: 20px;
+    }
+  }
+
+  .n-roi-swinging-doodle{
+    flex-direction: column;
+    gap: 50px;
+    margin-right: 40px;
+    margin-left: 40px;
+    box-sizing: border-box;
+    .n-maximize-your-roi{
+      font-size: 35px;
+    }
+    .n-with-traceline-youre{
+      font-size: 20px;
+    }
+    .n-swinging-doodles{
+      gap: 50px;
+      flex-direction: row;
+      .n-swinging-doodle{
+      flex-direction: column;
+      .n-swinging-doodle-img{
+        width: 90px;
+        height: 65px;
+      }
+      .n-swinging-doodle-heading{
+        font-size: 25px;
+      }
+      .n-swinging-doodle-description{
+        font-size: 20px;
+      }
+    }
+  }
+  }
+
+  .n-step-into-future-contact{ 
+    padding: 0px 20px;
+    box-sizing: border-box;
+  .n-step-into-future{
+    font-size: 30px;
+  }
+  .n-stay-ahead{
+    padding: 16px 38px;
+    font-size: 20px;
+  }
+}
+.n-horizontal-line {
+  width: auto;
+  max-width: 100% ;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.n-card-text-img-side {
+// flex-direction: column-reverse;
+max-height: fit-content;
+gap: 38px;
+margin: 96px 40px 0px;
+.n-guy-with-tablet{
+ width: 400px;
+ height: auto;
+}
+.n-card-text{
+margin: 30px 20px 0px;
+.n-we-can-help-you-list{
+  margin-bottom: 60px;
+}
+.n-amplify-operations{
+  font-size: 20px;
+}
+.n-streamline-manufacturing{
+  font-size: 15px;
+}
+.n-we-can-help-you{
+  font-size: 15px;
+}
+.n-we-can-help-you-list{
+  font-size: 15px;
+}
+}
+}
+.n-card-text-img-side-2{
+  // flex-direction: column;
+  margin: 96px 40px 0px;
+  max-height: fit-content;
+  gap: 38px;
+  .n-ship-carrying-goods{
+    width: 400px;
+    height: auto;
+  }
+  .n-card-text-2{
+    margin: 30px 20px 0px;
+    .n-we-can-help-you-list{
+      margin-bottom: 60px;
+    }
+    .n-streamline-supply{
+      font-size: 20px;
+    }
+    .n-enchance-your-supply{
+      font-size: 15px;
+    }
+    .n-we-can-help-you{
+      font-size: 15px;
+    }
+    .n-we-can-help-you-list{
+      font-size: 15px;
+    }
+  }
+}
+  }
+
+@media (max-width: 850px) {
+  .n-page-logo-contact{
+    margin: 60px 20px 0px;
+    .n-page-logo{
+    width: 140px;
+    height: 35px;
+    }
+    .n-contact-button{
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+    .n-contact-fixed-header{
+     font-size: 12px; 
+    }
+  }
+  .n-page-logo-contact.n-make-header{
+    max-width: 100%;
+    top: 15px;
+    left: 20px;
+    right: 20px;
+  }
+  .n-power-it-with-traceline{
+    margin-left: 20px;
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  .n-power-it-with-traceline.n-page-heading-mt-251{
+    margin-top: 146px;
+  }
+  
+  .n-about-traceline{
+    margin-left: 20px;
+    font-size: 15px;
+    margin-right: 20px;
+    max-width: fit-content;
+    .n-complete{
+      font-size: 15px;
+    }
+
+  }
+  
+  .n-free-call{
+    margin-left: 20px;
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+  .n-arrow-down{
+    margin-left: 22px;
+    height: 40px;
+  }
+  
+  .n-traceline-points{
+    margin-left: 20px;
+    flex-direction: column;
+    font-size: 17px;
+    .n-traceline-point-text{
+      font-size: 15px;
+    }
+  }
+  
+  .n-trusted-by-the-best{
+    font-size: 17px !important;
+  }
+  
+  .n-partner-lt{
+    width: 39px;
+  }
+  .n-partner-aai{
+    width: 77.4px;
+  }
+  .n-partner-musigma{
+    width: 39px;
+  }
+  .n-partner-siemens{
+    width: 69px;
+  }
+  .n-partner-bia{
+    width: 58.2px;
+  }
+  .n-partner-elgi{
+    width: 67.2px;
+  }
+  .n-partner-manipal{
+    width: 96.6px;
+  }
+  .n-partner-mak{
+    width: 77.4px;
+  }
+  .n-partners{
+    margin: 32px 20px 0px !important;
+  }
+  
+  .n-text-number-container{
+    margin: 64px 20px 58.32px 20px;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .n-every-machine{
+  font-size: 20px;
+  max-width: 100%;
+  }
+  
+  .n-attributes{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: wrap;
+    .n-attribute{
+      width: 45%;
+      align-items: center;
+   .n-attribute-numbers{
+    font-size: 42px;
+    text-align: center;
+   }
+   .n-attribute-text{
+    font-size: 15px;
+    text-align: center;
+   }
+    }
+  }
+  
+  .n-not-every-tool{
+    max-width: 350px;
+      font-size: 24px;
+  }
+  .n-traceline-consolidates{
+   max-width: 380px;
+   font-size: 15px;
+  }
+
+
+  .n-card-holder{
+    margin: 0px 20px;
+    justify-content: center;
+    .n-app-card{
+      width: 100%;
+    }
+  }
+ 
+
+
+  .n-good-news-with-traceline{
+    padding: 0px 20px;
+    .n-good-news{
+      font-size: 23px;
+    }
+    .n-with-traceline{
+      font-size: 15px;
+    }
+    .n-three-people-looking-at-tablet{
+      width: 100%;
+    }
+  }
+
+  .n-game-changer-sundaram{
+    margin-left: 60px;
+    .n-game-changer{
+      font-size: 20px;
+    }
+    .n-sundaram{
+      font-size: 15px;
+    }
+  }
+
+  .n-roi-swinging-doodle{
+    flex-direction: column;
+    gap: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    .n-maximize-your-roi{
+      font-size: 20px;
+    }
+    .n-with-traceline-youre{
+      font-size: 15px;
+    }
+    .n-swinging-doodles{
+      gap: 50px;
+      flex-direction: column;
+      .n-swinging-doodle{
+      flex-direction: column;
+      .n-swinging-doodle-img{
+        width: 90px;
+        height: 65px;
+      }
+      .n-swinging-doodle-heading{
+        font-size: 20px;
+      }
+      .n-swinging-doodle-description{
+        font-size: 15px;
+      }
+    }
+  }
+  }
+
+  .n-step-into-future-contact{ 
+    padding: 0px 20px;
+    box-sizing: border-box;
+  .n-step-into-future{
+    font-size: 20px;
+  }
+  .n-stay-ahead{
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+}
+.n-horizontal-line {
+  width: auto;
+  max-width: 100% ;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.n-card-text-img-side {
+flex-direction: column-reverse;
+max-height: fit-content;
+margin: 96px 20px 0px;
+.n-guy-with-tablet{
+ width: 100%;
+ height: auto;
+ border-radius: 64px 64px 0px 0px;
+}
+.n-card-text{
+margin: 30px 20px 0px;
+.n-we-can-help-you-list{
+  margin-bottom: 60px;
+}
+.n-amplify-operations{
+  font-size: 20px;
+}
+.n-streamline-manufacturing{
+  font-size: 15px;
+}
+.n-we-can-help-you{
+  font-size: 15px;
+}
+.n-we-can-help-you-list{
+  font-size: 15px;
+}
+}
+}
+.n-card-text-img-side-2{
+  flex-direction: column;
+  margin: 96px 20px 0px;
+  max-height: fit-content;
+  .n-ship-carrying-goods{
+    width: 100%;
+    height: auto;
+    border-radius: 64px 64px 0px 0px;
+  }
+  .n-card-text-2{
+    margin: 30px 20px 0px;
+    .n-we-can-help-you-list{
+      margin-bottom: 60px;
+    }
+    .n-streamline-supply{
+      font-size: 20px;
+    }
+    .n-enchance-your-supply{
+      font-size: 15px;
+    }
+    .n-we-can-help-you{
+      font-size: 15px;
+    }
+    .n-we-can-help-you-list{
+      font-size: 15px;
+    }
+  }
+}
+  }
+
+
+
+  
+  

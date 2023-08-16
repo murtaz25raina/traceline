@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,22 +6,95 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  tracelinePoints:string[] = [
-    "MES",
-    "Digital Warehouse",
-    "Supply Chain Innovations",
-    "Field Service Management",
-    "IT Infrastructure Modernization"
-  ]
-  partners :string[]=[
-    'assets/images/partner-1.png',
-    'assets/images/partner-2.png',
-    'assets/images/partner-3.png',
-    'assets/images/partner-4.png',
-    'assets/images/partner-5.png',
-    'assets/images/partner-6.png',
-    'assets/images/partner-7.png',
-    'assets/images/partner-8.png',
-  ]
-  
+  scrollPosition = 0;
+  innerWidth = window.innerWidth;
+  fixedHeader: boolean = true;
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+
+  paragraph =
+    'Every machine, optimized to perfection. Raw materials? Always in perfect sync. Product defects? Now a distant memory. Supply chain insights. From start to finish. Predictive maintenance? Downtime minimized. With Traceline, precision meets foresight. Your warehouse, transformed digitally. Every data point? An avenue for growth.';
+
+  paragraphArray = this.paragraph.split(" ");
+  tracelinePoints: string[] = [
+    'MES',
+    'Digital Warehouse',
+    'Supply Chain Innovations',
+    'Field Service Management',
+    'IT Infrastructure Modernization',
+  ];
+  partners = [
+    {src:'assets/images/partner-1.png',class:'n-partner-lt'},
+    {src:'assets/images/partner-2.png',class:'n-partner-aai'},
+    {src:'assets/images/partner-3.png',class:'n-partner-musigma'},
+    {src:'assets/images/partner-4.png',class:'n-partner-siemens'},
+    {src:'assets/images/partner-5.png',class:'n-partner-bia'},
+    {src:'assets/images/partner-6.png',class:'n-partner-elgi'},
+    {src:'assets/images/partner-7.png',class:'n-partner-manipal'},
+    {src:'assets/images/partner-8.png',class:'n-partner-mak'},
+  ];
+
+  hideFixedHeader = () => {
+    this.fixedHeader = false;
+  };
+  showFixedHeader = () => {
+    this.fixedHeader = true;
+  };
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event) {
+    this.scrollPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    const element = this.elementRef.nativeElement.querySelector(
+      '.n-page-logo-contact'
+    );
+    const elementHeading = this.elementRef.nativeElement.querySelector(
+      '.n-power-it-with-traceline'
+    );
+    if (window.innerWidth > 850) {
+      if (this.scrollPosition > 90) {
+        this.renderer.addClass(element, 'n-make-header');
+        this.renderer.addClass(elementHeading, 'n-page-heading-mt-268');
+      } else {
+        this.renderer.removeClass(element, 'n-make-header');
+        this.renderer.removeClass(elementHeading, 'n-page-heading-mt-268');
+      }
+    }
+    else{
+      if (this.scrollPosition > 50) {
+        this.renderer.addClass(element, 'n-make-header');
+        this.renderer.addClass(elementHeading, 'n-page-heading-mt-251');
+      } else {
+        this.renderer.removeClass(element, 'n-make-header');
+        this.renderer.removeClass(elementHeading, 'n-page-heading-mt-251');
+      }
+    }
+
+
+
+    const paragraphContainer = this.elementRef.nativeElement.querySelector(
+      '#paragraph-container'
+    );
+    const spans = paragraphContainer.querySelectorAll('span');
+
+    spans.forEach((span: HTMLElement,spanIndex: number) => {
+      const spanTop = span.getBoundingClientRect().top;
+      let color = '#86868b';
+
+      if (spanTop < 300) {
+        color = '#000';
+      } else {
+        color = '#86868b';
+
+      }
+        span.style.color = color;
+      
+    });
+  }
+
+
+
 }

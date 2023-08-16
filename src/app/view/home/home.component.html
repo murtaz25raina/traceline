@@ -1,92 +1,114 @@
 <div class="n-container">
-  <div class="n-page-logo-contact">
+  <div class="n-page-logo-contact" *ngIf="fixedHeader">
     <img
       src="assets/images/traceline-head-logo.png"
       alt="page-logo"
       class="n-page-logo"
+      *ngIf="(scrollPosition < 90 && innerWidth > 850) || (scrollPosition < 50 && innerWidth < 850)"
     />
-    <div>
-      <button class="n-contact-button" (click)="animatedComponent.openComponent()">
+    <div *ngIf="(scrollPosition < 90 && innerWidth > 850) || (scrollPosition < 50 && innerWidth < 850) ">
+      <button
+        class="n-contact-button"
+        (click)="animatedComponent.openComponent();hideFixedHeader();"
+      >
         Schedule a call
       </button>
     </div>
+    <div *ngIf="(scrollPosition > 90 && innerWidth> 850) || (scrollPosition > 50 && innerWidth < 850) " class="n-contact-fixed-header">
+      Unleash Industry 4.0 with Traceline.
+      <u
+        class="n-contact-fixed-header-call"
+        (click)="animatedComponent.openComponent(); hideFixedHeader();"
+      >
+        Schedule your call.
+      </u>
+    </div>
   </div>
-  <div class="n-power-it-with-traceline">
+  <div class="n-power-it-with-traceline" data-aos="fade-up">
     Manufacturing 4.0: Power it with Traceline.
   </div>
   <img
     src="assets/images/page-top-image.png"
     alt="power-it-with-traceline"
     class="n-page-top-image"
+    data-aos="fade-up"
   />
-  <div class="n-about-traceline">
+  <div class="n-about-traceline" data-aos="fade-up">
     Traceline is the <span class="n-complete">complete</span> manufacturing OS
     that accelerates your transition into Industry 4.0, optimizing every facet
     of your processes and delivering outcomes beyond what you thought possible.
   </div>
-  <button class="n-contact-button n-free-call" (click)="animatedComponent.openComponent()">
+  <button
+    class="n-contact-button n-free-call"
+    (click)="animatedComponent.openComponent();hideFixedHeader();"
+    data-aos="fade-up"
+  >
     Step into 4.0 – Request a free call
   </button>
   <img
     src="assets/images/arrow-down.png"
     alt="arrow-down"
     class="n-arrow-down"
+    data-aos="fade-up"
   />
-  <div class="n-traceline-points">
+  <div class="n-traceline-points" data-aos="fade-up">
     <span class="n-traceline-point" *ngFor="let point of tracelinePoints">
       <img src="assets/images/tick.png" alt="" class="n-tick" />
       <span class="n-traceline-point-text">{{ point }}</span>
     </span>
   </div>
   <div class="n-white-background-page">
-    <div class="n-trusted-by-the-best">Trusted by the best in the business</div>
-    <div class="n-partners">
+    <div class="n-trusted-by-the-best" data-aos="fade-up">Trusted by the best in the business</div>
+    <div class="n-partners" data-aos="fade-up">
       <span *ngFor="let partner of partners">
-        <img [src]="partner" alt="partner" />
+        <img [src]="partner.src" alt="_partner_" [class]="partner.class"/>
       </span>
     </div>
     <div class="n-flex-row n-text-number-container">
-      <div class="n-every-machine">
-        Every machine, optimized to perfection. Raw materials? Always in perfect
+      <div class="n-every-machine" data-aos="fade-up">
+        <div id="paragraph-container">
+        <span *ngFor="let word of paragraphArray">{{word}} </span>
+        </div>
+        <!-- Every machine, optimized to perfection. Raw materials? Always in perfect
         sync. Product defects? Now a distant memory. Supply chain insights. From
         start to finish. Predictive maintenance? Downtime minimized. With
         Traceline, precision meets foresight. Your warehouse, transformed
-        digitally. Every data point? An avenue for growth.
-        <br /><br />
+        digitally. Every data point? An avenue for growth. -->
+        <br />
         <span style="color: #000"
           >Welcome to the next era of manufacturing.</span
         >
       </div>
       <div class="n-flex-column n-attributes">
-        <div class="n-flex-column">
+        <div class="n-flex-column n-attribute" data-aos="fade-up">
           <span class="n-attribute-numbers">41%</span>
-          <span class="n-attribute">Increased Efficiency</span>
+          <span class="n-attribute-text">Increased Efficiency</span>
         </div>
-        <div class="n-flex-column">
+        <div class="n-flex-column n-attribute" data-aos="fade-up">
           <span class="n-attribute-numbers">25%</span>
-          <span class="n-attribute">Waste Reduction</span>
+          <span class="n-attribute-text">Waste Reduction</span>
         </div>
-        <div class="n-flex-column">
+        <div class="n-flex-column n-attribute" data-aos="fade-up">
           <span class="n-attribute-numbers">65%</span>
-          <span class="n-attribute">Faster Decision Making</span>
+          <span class="n-attribute-text">Faster Decision Making</span>
         </div>
-        <div class="n-flex-column">
+        <div class="n-flex-column n-attribute" data-aos="fade-up">
           <span class="n-attribute-numbers">2x</span>
-          <span class="n-attribute">Return on investment in one year</span>
+          <span class="n-attribute-text">Return on investment in one year</span>
         </div>
       </div>
     </div>
   </div>
   <div>
-    <div class="n-not-every-tool">
+    <div class="n-not-every-tool" data-aos="fade-up">
       Not every tool in the shed, just the ones to keep you ahead.
     </div>
-    <div class="n-traceline-consolidates">
+    <div class="n-traceline-consolidates" data-aos="fade-up">
       Traceline consolidates every essential module, ensuring seamless
       operations and amplified productivity in your manufacturing journey. No
       more fragmented systems or scattered data; just streamlined success.
     </div>
-    <div class="n-card-text-img-side">
+    <div class="n-card-text-img-side" data-aos="fade-up">
       <div class="n-card-text">
         <div class="n-amplify-operations">
           Amplify operations with MES Mastery.
@@ -108,17 +130,19 @@
         </ul>
       </div>
       <img
-        src="assets/images/guy-with-tablet.png"
+        [src]="(innerWidth > 850) ? 'assets/images/guy-with-tablet.png' : 'assets/images/guy-with-tablet-mob.jpg' "
         alt="guy_with_tablet"
         class="n-guy-with-tablet"
       />
     </div>
   </div>
   <div
-    class="n-flex-row n-flex-wrap"
-    style="gap: 38px; justify-content: center"
+    class="n-flex-row n-flex-wrap n-card-holder"
   >
     <app-card
+    class="n-app-card"
+    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
+    data-aos="fade-up"
       [cardContent]="{
         heading: 'Optimize Equipment Efficiency (OEE)',
         list: [
@@ -137,6 +161,9 @@
       }"
     ></app-card>
     <app-card
+    data-aos="fade-up"
+    class="n-app-card"
+    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Aftermarket Services & Customer Engagement',
         list: [
@@ -158,13 +185,13 @@
       }"
     ></app-card>
   </div>
-  <div class="n-game-changer-sundaram">
+  <div class="n-game-changer-sundaram" data-aos="fade-up">
     <div class="n-game-changer">“Game Changer”</div>
     <div class="n-sundaram">Sundaram Clayton</div>
   </div>
-  <div class="n-card-text-img-side-2">
+  <div class="n-card-text-img-side-2" data-aos="fade-up">
     <img
-      src="assets/images/ship.png"
+    [src]="(innerWidth > 850) ? 'assets/images/ship.png':'assets/images/ship-mob.jpg'"
       alt="ship_carrying_goods"
       class="n-ship-carrying-goods"
     />
@@ -185,15 +212,17 @@
       </ul>
     </div>
   </div>
-  <div class="n-game-changer-sundaram">
+  <div class="n-game-changer-sundaram" data-aos="fade-up">
     <div class="n-game-changer">“A Manufacturing Marvel”</div>
     <div class="n-sundaram">TVS Motors</div>
   </div>
   <div
-    class="n-flex-row n-flex-wrap"
-    style="gap: 38px; justify-content: center"
+    class="n-flex-row n-flex-wrap n-card-holder"
   >
     <app-card
+    data-aos="fade-up"
+    class="n-app-card"
+    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Field Service Management Platform',
         list: [
@@ -215,6 +244,9 @@
       }"
     ></app-card>
     <app-card
+    data-aos="fade-up"
+    class="n-app-card"
+    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Digital Core & Innovation',
         list: [
@@ -235,7 +267,7 @@
       }"
     ></app-card>
   </div>
-  <div class="n-card-text-img-side" style="margin-top: 72px;">
+  <div class="n-card-text-img-side" style="margin-top: 72px" data-aos="fade-up">
     <div class="n-card-text">
       <div class="n-amplify-operations">
         Digital Warehouse Management System
@@ -255,56 +287,93 @@
       </ul>
     </div>
     <img
-      src="assets/images/smiling-man.png"
+    [src]="(innerWidth > 850) ? 'assets/images/smiling-man.png':'assets/images/smiling-man-mob.jpg'"
       alt="guy_with_tablet"
       class="n-guy-with-tablet"
     />
   </div>
   <div class="n-good-news-with-traceline">
-    <div class="n-good-news">
+    <div class="n-good-news" data-aos="fade-up">
       Good news? Everything ties back to SAP. In good way.
     </div>
-    <div class="n-with-traceline">
-      With Traceline, SAP integration isn't an afterthought—it's revolutionary. Witness a manufacturing transformation where data seamlessly synchronizes and processes sing in unison. This is the game-changer the industry's been waiting for. Welcome to the future of manufacturing excellence.
+    <div class="n-with-traceline" data-aos="fade-up">
+      With Traceline, SAP integration isn't an afterthought—it's revolutionary.
+      Witness a manufacturing transformation where data seamlessly synchronizes
+      and processes sing in unison. This is the game-changer the industry's been
+      waiting for. Welcome to the future of manufacturing excellence.
     </div>
-    <img src="assets/images/three-people-looking-at-tablet.png" alt="three-people-looking-at-tablet" class="n-three-people-looking-at-tablet"/>
+    <img
+      src="assets/images/three-people-looking-at-tablet.png"
+      alt="three-people-looking-at-tablet"
+      class="n-three-people-looking-at-tablet"
+      data-aos="fade-up"
+    />
   </div>
   <div class="n-flex-row n-roi-swinging-doodle">
     <div>
-      <div class="n-maximize-your-roi">Maximize your ROI</div>
-      <div class="n-with-traceline-youre">With Traceline, you're not just investing in software; you're ensuring a future of optimized manufacturing. And it's not just our word: industry studies have highlighted an impressive 320% ROI in just two years.</div>
+      <div class="n-maximize-your-roi" data-aos="fade-up">Maximize your ROI</div>
+      <div class="n-with-traceline-youre" data-aos="fade-up">
+        With Traceline, you're not just investing in software; you're ensuring a
+        future of optimized manufacturing. And it's not just our word: industry
+        studies have highlighted an impressive 320% ROI in just two years.
+      </div>
     </div>
     <div class="n-flex-column n-swinging-doodles">
-      <div class="n-flex-row n-swinging-doodle">
-        <img src="assets/images/SwingingDoodle-1.png" alt="icon" class="n-swinging-doodle-img" />
+      <div class="n-flex-row n-swinging-doodle" data-aos="fade-up">
+        <img
+          src="assets/images/SwingingDoodle-1.png"
+          alt="icon"
+          class="n-swinging-doodle-img"
+        />
         <div>
           <div class="n-swinging-doodle-heading">Improve time to value</div>
-          <div class="n-swinging-doodle-description">Traceline is primed for action. Dive into Industry 4.0 without teething pains, ensuring streamlined manufacturing from day one.</div>
+          <div class="n-swinging-doodle-description">
+            Traceline is primed for action. Dive into Industry 4.0 without
+            teething pains, ensuring streamlined manufacturing from day one.
+          </div>
         </div>
       </div>
-      <div class="n-flex-row n-swinging-doodle">
-        <img src="assets/images/SwingingDoodle-2.png" alt="icon" class="n-swinging-doodle-img" />
+      <div class="n-flex-row n-swinging-doodle" data-aos="fade-up">
+        <img
+          src="assets/images/SwingingDoodle-2.png"
+          alt="icon"
+          class="n-swinging-doodle-img"
+        />
         <div>
           <div class="n-swinging-doodle-heading">Keep costs low</div>
-          <div class="n-swinging-doodle-description">Traceline isn't just top-tier tech; it's bottom-line brilliance. Eliminate extraneous systems, spend less, achieve more. Efficiency, now attainable and affordable.</div>
+          <div class="n-swinging-doodle-description">
+            Traceline isn't just top-tier tech; it's bottom-line brilliance.
+            Eliminate extraneous systems, spend less, achieve more. Efficiency,
+            now attainable and affordable.
+          </div>
         </div>
       </div>
-      <div class="n-flex-row n-swinging-doodle">
-        <img src="assets/images/SwingingDoodle-3.png" alt="icon" class="n-swinging-doodle-img" />
+      <div class="n-flex-row n-swinging-doodle" data-aos="fade-up">
+        <img
+          src="assets/images/SwingingDoodle-3.png"
+          alt="icon"
+          class="n-swinging-doodle-img"
+        />
         <div>
           <div class="n-swinging-doodle-heading">Improve time to value</div>
-          <div class="n-swinging-doodle-description">In an era where sustainability is key, Traceline champions eco-friendly manufacturing. Streamlining processes, cutting waste, you advance towards a greener, responsible industry.</div>
+          <div class="n-swinging-doodle-description">
+            In an era where sustainability is key, Traceline champions
+            eco-friendly manufacturing. Streamlining processes, cutting waste,
+            you advance towards a greener, responsible industry.
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="n-horizontal-line"></div>
+  <div class="n-horizontal-line" data-aos="fade-up"></div>
   <div class="n-step-into-future-contact">
- <div class="n-step-into-future">
-  Step into the future of manufacturing 4.0 with Traceline.
- </div>
- <button class="n-stay-ahead" (click)="animatedComponent.openComponent()">Stay ahead of the curve – Request a free call</button>
-</div>
-<app-contactus-footer></app-contactus-footer>
-<app-contact #animatedComponent></app-contact>
+    <div class="n-step-into-future" data-aos="fade-up">
+      Step into the future of manufacturing 4.0 with Traceline.
+    </div>
+    <button class="n-stay-ahead" (click)="animatedComponent.openComponent();hideFixedHeader();" data-aos="fade-up">
+      Stay ahead of the curve – Request a free call
+    </button>
+  </div>
+  <app-contactus-footer data-aos="fade-up"></app-contactus-footer>
+  <app-contact #animatedComponent [showFixedHeaderFunction]="showFixedHeader" ></app-contact>
 </div>

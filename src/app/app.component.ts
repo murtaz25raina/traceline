@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
+import * as Aos from 'aos';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -36,5 +37,17 @@ export class AppComponent {
           this.titleService.setTitle(`Traceline  ${data}`);
         }
       });
+  }
+
+  ngAfterViewInit(): void {
+    Aos.init({
+      duration: 1500,
+      once: true,
+    });
+  }
+
+  @HostListener('window:load')
+  onLoad() {
+    Aos.refresh();
   }
 }

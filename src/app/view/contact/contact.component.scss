@@ -63,7 +63,7 @@
       text-align: center;
     }
   }
-  .n-vertical-line{
+  .n-vertical-line {
     width: 2px;
     height: 400px;
     background-color: #fff;
@@ -83,25 +83,91 @@
         line-height: 32px;
         width: 330px;
       }
-      .n-input-contact{
+      .n-input-contact {
         width: 330px;
-    padding: 10px 25px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    outline: none;
+        padding: 10px 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        outline: none;
       }
-      .n-button-contact{
+      .n-button-contact {
         width: 383px;
         padding: 10px 0px;
         margin-top: 20px;
         background-color: #fff;
       }
     }
-    .n-request-message{
-        color: white;
+    .n-request-message {
+      color: white;
+      font-size: 32px;
+      line-height: 48px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+
+  .n-contact-header {
+    .n-contact-logo {
+      width: 125px !important;
+    }
+    .n-close-button {
+      width: 68px !important;
+    height: 30px;
+    }
+  }
+  .n-text-contact {
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .n-text-lets-talk {
+      width: 90%;
+      .n-lets-talk {
         font-size: 32px;
+      }
+      .n-fill-in-the-form {
+        font-size: 22px;
+      }
+    }
+
+    .n-vertical-line {
+      width: 90%;
+      height: 2px;
+    }
+    .n-form-right {
+      width: 90%;
+      .n-form-container {
+        .n-label {
+          color: white;
+          font-size: 20px;
+          line-height: 32px;
+          width: 230px;
+        }
+        .n-input-contact {
+          width: 230px;
+          padding: 10px 15px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          outline: none;
+        }
+        .n-button-contact {
+          width: 263px;
+          padding: 10px 0px;
+          margin-top: 15px;
+          background-color: #fff;
+        }
+       
+      }
+      .n-request-message {
+        font-size: 22px;
         line-height: 48px;
         text-align: center;
+      }
     }
   }
 }
