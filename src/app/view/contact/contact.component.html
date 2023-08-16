@@ -9,7 +9,7 @@
       <button class="n-close-button" (click)="closeComponent();showFixedHeader()">Close</button>
     </div>
     <div class="n-text-contact">
-        <div class="n-text-lets-talk"  >
+        <div class="n-text-lets-talk"  *ngIf="!isSubmitted">
           <span class="n-lets-talk">Let’s talk.</span>
           <span class="n-fill-in-the-form">
             Fill in the form, or, if you prefer,
@@ -19,7 +19,7 @@
             >
           </span>
         </div>
-        <div class="n-vertical-line" ></div>
+        <div class="n-vertical-line" *ngIf="!isSubmitted" ></div>
       <div class="n-form-right"  >
         <div *ngIf="!isSubmitted">
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
