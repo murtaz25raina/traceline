@@ -1031,6 +1031,9 @@ margin: 0px 20px;
   
   @media (max-width: 450px) {
     .n-page-logo-contact.n-make-header{
-      font-size: 11px;
+      text-align: center;
+      .n-contact-fixed-header{
+        font-size: 11px;
+      }
     }
   }
