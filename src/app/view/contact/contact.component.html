@@ -27,8 +27,8 @@
       </div>
       <div class="n-vertical-line" *ngIf="!isSubmitted"></div>
       <div class="n-form-right">
-        <div *ngIf="!isSubmitted">
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="!isSubmitted" style="width: 100%;">
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" style="width: 100%;">
             <div class="n-form-container">
               <label for="n-name" class="n-label">Your name</label>
               <input
