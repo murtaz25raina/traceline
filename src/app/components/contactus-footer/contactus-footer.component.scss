@@ -259,6 +259,14 @@
       .n-contact-fetch-email {
         flex-direction: column;
         gap: 20px;
+        .n-thank-you{
+          color: #fff;
+          font-family: Graphik;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 30px; /* 150% */
+        }
         .n-email-input-button {
           flex-direction: column;
           gap: 16px;
