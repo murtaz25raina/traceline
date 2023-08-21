@@ -6,21 +6,27 @@
         class="n-contact-logo"
         alt="traceline"
       />
-      <button class="n-close-button" (click)="closeComponent();showFixedHeader()">Close</button>
+      <button
+        class="n-close-button"
+        (click)="closeComponent(); showFixedHeader();scrollNormal();"
+        *ngIf="!isSubmitted"
+      >
+        Close
+      </button>
     </div>
-    <div class="n-text-contact">
-        <div class="n-text-lets-talk"  *ngIf="!isSubmitted">
-          <span class="n-lets-talk">Let’s talk.</span>
-          <span class="n-fill-in-the-form">
-            Fill in the form, or, if you prefer,
-            <br/>
-            <a target="_blank" href="mailto:info@netcon.in"
-              >send us an email.</a
-            >
-          </span>
-        </div>
-        <div class="n-vertical-line" *ngIf="!isSubmitted" ></div>
-      <div class="n-form-right"  >
+    <div class="n-text-contact" *ngIf="!isSubmitted">
+      <div class="n-text-lets-talk" *ngIf="!isSubmitted">
+        <span class="n-lets-talk">
+          Step into the future of Manufacturing 4.0
+        </span>
+        <span class="n-fill-in-the-form">
+          Traceline is the <b>complete</b> manufacturing OS that accelerates your
+          transition into Industry 4.0, optimizing every facet of your processes
+          and delivering outcomes beyond what you thought possible.
+        </span>
+      </div>
+      <div class="n-vertical-line" *ngIf="!isSubmitted"></div>
+      <div class="n-form-right">
         <div *ngIf="!isSubmitted">
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
             <div class="n-form-container">
@@ -61,16 +67,17 @@
             </div>
           </form>
         </div>
-
-        <div *ngIf="isSubmitted" >
-          <div class="n-request-message">
-            <div>Yay!</div>
-            <div>
-              Your request has been sent. Someone nice from our team will reach
-              out to you quicker than you’d think.
-            </div>
-          </div>
+      </div>
+    </div>
+    <div *ngIf="isSubmitted">
+      <div class="n-request-message">
+        <div class="n-got-it">Got it.</div>
+        <div class="n-recieved-email">
+          We’ve received your email. Someone nice will read it and respond to you within 24 hours. Please smile, you’re looking nice today. And enjoy the rest of your Friday.
         </div>
+        <button class="n-go-to-home" (click)="closeComponent(); showFixedHeader();scrollNormal();">
+          Go back to homepage
+        </button>
       </div>
     </div>
   </div>

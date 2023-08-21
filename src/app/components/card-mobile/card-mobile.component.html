@@ -1,0 +1,15 @@
+<div class="n-card-mobile" [class.is-flipped]="isFlipped" (click)="toggleFlip()" [ngStyle]="cardMobileContent.cardStyle" data-aos="fade-up">
+    <div class="n-card-inner-mobile">
+      <div class="n-card-front-mobile" [style.backgroundImage]="cardMobileContent.image">
+        <div class="n-card-heading-mobile">{{cardMobileContent.heading}}</div>
+        <div class="n-card-description-mobile">{{cardMobileContent.description}}</div>
+      </div>
+      <div class="n-card-back-mobile" [style.backgroundImage]="cardMobileContent.image">
+        <div class="n-we-can-help-you-mobile">We can help you with:</div>
+        <ul class="n-card-list-mobile">
+            <li *ngFor="let list of cardMobileContent.list">{{list}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

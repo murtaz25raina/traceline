@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 })
 export class ContactComponent implements OnInit{
   @Input() showFixedHeaderFunction: (() => void) | undefined;
+  @Input() startBackgroundScroll: (() => void) | undefined;
 
   isOpen: boolean = false;
   contactForm!: FormGroup;
@@ -86,6 +87,11 @@ export class ContactComponent implements OnInit{
     this.location.back();
   }
 
+  scrollNormal=()=>{
+  if (this.startBackgroundScroll){
+    this.startBackgroundScroll();
+  }
+}
   showFixedHeader() {
     if (this.showFixedHeaderFunction) {
       this.showFixedHeaderFunction();

@@ -1,7 +1,7 @@
-export interface CardContent{
+export interface CardMobileContent{
     heading:String,
     description:String,
     list:String[],
     cardStyle:Object,
-    headStyle:Object
+    image:string
 }

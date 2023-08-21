@@ -9,13 +9,13 @@ export class HomeComponent {
   scrollPosition = 0;
   innerWidth = window.innerWidth;
   fixedHeader: boolean = true;
+  elementHeight = "auto"
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   paragraph =
-    'Every machine, optimized to perfection. Raw materials? Always in perfect sync. Product defects? Now a distant memory. Supply chain insights. From start to finish. Predictive maintenance? Downtime minimized. With Traceline, precision meets foresight. Your warehouse, transformed digitally. Every data point? An avenue for growth.';
-
-  paragraphArray = this.paragraph.split(" ");
+  'Machines? Always ready.Inventory? Optimally stocked.Defect rate? Near zero.Supply chain? Clear as day.Maintenance? Before it breaks.Growth? Data-driven, assured.Decisions? Smarter, quicker.Traceline? Your digital partner'
+  paragraphArray = this.paragraph.split(".");
   tracelinePoints: string[] = [
     'MES',
     'Digital Warehouse',
@@ -25,13 +25,13 @@ export class HomeComponent {
   ];
   partners = [
     {src:'assets/images/partner-1.png',class:'n-partner-lt'},
-    {src:'assets/images/partner-2.png',class:'n-partner-aai'},
-    {src:'assets/images/partner-3.png',class:'n-partner-musigma'},
-    {src:'assets/images/partner-4.png',class:'n-partner-siemens'},
-    {src:'assets/images/partner-5.png',class:'n-partner-bia'},
-    {src:'assets/images/partner-6.png',class:'n-partner-elgi'},
-    {src:'assets/images/partner-7.png',class:'n-partner-manipal'},
-    {src:'assets/images/partner-8.png',class:'n-partner-mak'},
+    {src:'assets/images/partner-2.png',class:'n-partner-elgi'},
+    {src:'assets/images/partner-3.png',class:'n-partner-mak'},
+    {src:'assets/images/partner-4.png',class:'n-partner-sevenf'},
+    {src:'assets/images/partner-5.png',class:'n-partner-viseon'},
+    {src:'assets/images/partner-6.png',class:'n-partner-fss'},
+    {src:'assets/images/partner-7.png',class:'n-partner-hands'},
+    {src:'assets/images/partner-8.png',class:'n-partner-sundaram'},
   ];
 
   hideFixedHeader = () => {
@@ -40,6 +40,18 @@ export class HomeComponent {
   showFixedHeader = () => {
     this.fixedHeader = true;
   };
+  stopBackgroundScroll =() =>{
+    this.elementHeight='100vh';
+  }
+
+  startBackgroundScroll =() =>{
+    this.elementHeight='auto';
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event:Event){
+    this.innerWidth = window.innerWidth;
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
@@ -54,7 +66,7 @@ export class HomeComponent {
     const elementHeading = this.elementRef.nativeElement.querySelector(
       '.n-power-it-with-traceline'
     );
-    if (window.innerWidth > 850) {
+    if (window.innerWidth > 550) {
       if (this.scrollPosition > 90) {
         this.renderer.addClass(element, 'n-make-header');
         this.renderer.addClass(elementHeading, 'n-page-heading-mt-268');
@@ -64,7 +76,7 @@ export class HomeComponent {
       }
     }
     else{
-      if (this.scrollPosition > 50) {
+      if (this.scrollPosition > 23) {
         this.renderer.addClass(element, 'n-make-header');
         this.renderer.addClass(elementHeading, 'n-page-heading-mt-251');
       } else {
@@ -78,19 +90,19 @@ export class HomeComponent {
     const paragraphContainer = this.elementRef.nativeElement.querySelector(
       '#paragraph-container'
     );
-    const spans = paragraphContainer.querySelectorAll('span');
+    const divs = paragraphContainer.querySelectorAll('div');
 
-    spans.forEach((span: HTMLElement,spanIndex: number) => {
-      const spanTop = span.getBoundingClientRect().top;
+    divs.forEach((div: HTMLElement,divIndex: number) => {
+      const divTop = div.getBoundingClientRect().top;
       let color = '#86868b';
 
-      if (spanTop < 300) {
+      if (divTop < 300) {
         color = '#000';
       } else {
         color = '#86868b';
 
       }
-        span.style.color = color;
+        div.style.color = color;
       
     });
   }

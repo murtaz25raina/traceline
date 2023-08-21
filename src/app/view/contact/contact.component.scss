@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: scroll;
   background-color: #000;
   z-index: 1;
   transform: scaleY(0);
@@ -23,15 +24,20 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 96px;
     .n-contact-logo {
-      margin-left: 20px;
+      margin-left: 96px;
       width: 175px;
     }
     .n-close-button {
-      border-radius: 30px;
-      margin-right: 20px;
-      width: 100px;
+      display: inline-flex;
+      padding: 18px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 45px;
+      background: #fff;
+      margin-right: 96px;
       cursor: pointer;
       border: 0px;
       background-color: white;
@@ -39,28 +45,72 @@
   }
 }
 
+.n-request-message {
+  margin-left: 192px;
+  margin-top: 190px;
+  .n-got-it {
+    color: #fff;
+    font-family: Feature Display Trial;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 65px; /* 116.071% */
+    max-width: 450px;
+  }
+  .n-recieved-email {
+    color: #fff;
+    font-family: Graphik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 137.5% */
+    max-width: 457px;
+    margin-top: 10px;
+  }
+  .n-go-to-home {
+    width: 432px;
+    height: 48px;
+    border-radius: 8px;
+    background: #ffda00;
+    margin-top: 38px;
+    color: #000;
+    text-align: center;
+    font-family: Graphik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    cursor: pointer;
+  }
+}
+
 .n-text-contact {
   display: flex;
   flex-direction: row;
-  margin: 80px auto 0px;
-  width: 90%;
-  gap: 2%;
+  margin: 56px auto 0px;
+  width: fit-content;
+  gap: 80px;
   .n-text-lets-talk {
     display: flex;
     flex-direction: column;
-    width: 46%;
-    align-items: center;
+    gap: 15px;
     justify-content: center;
+    max-width: 457px;
     .n-lets-talk {
-      color: white;
+      color: #fff;
+      font-family: Feature Display Trial;
       font-size: 56px;
-      line-height: 64px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 65px; /* 116.071% */
     }
     .n-fill-in-the-form {
-      color: white;
-      font-size: 32px;
-      line-height: 48px;
-      text-align: center;
+      color: #fff;
+      font-family: Graphik;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px; /* 137.5% */
     }
   }
   .n-vertical-line {
@@ -69,7 +119,6 @@
     background-color: #fff;
   }
   .n-form-right {
-    width: 46%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,95 +127,192 @@
       display: flex;
       flex-direction: column;
       .n-label {
-        color: white;
-        font-size: 26px;
-        line-height: 32px;
-        width: 330px;
+        color: #9d9d9d;
+        font-family: Graphik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 137.5% */
+        margin-bottom: 8px;
+
+        // width: 330px;
       }
       .n-input-contact {
-        width: 330px;
-        padding: 10px 25px;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        width: 432px;
+        height: 48px;
+        border-radius: 8px;
+        background: #171717;
+        color: #9d9d9d;
+        margin-bottom: 32px;
+        border: none;
+        padding: 16px 24px;
+        box-sizing: border-box;
         outline: none;
       }
       .n-button-contact {
-        width: 383px;
-        padding: 10px 0px;
-        margin-top: 20px;
-        background-color: #fff;
+        width: 432px;
+        height: 48px;
+        border-radius: 8px;
+        background: #ffda00;
+        color: #000;
+        text-align: center;
+        font-family: Graphik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px; /* 100% */
+        cursor: pointer;
       }
     }
-    .n-request-message {
-      color: white;
-      font-size: 32px;
-      line-height: 48px;
-      text-align: center;
-    }
+    // .n-request-message {
+    //   margin-left: 192px;
+    //   .n-got-it {
+    //     color: #fff;
+    //     font-family: Feature Display Trial;
+    //     font-size: 56px;
+    //     font-style: normal;
+    //     font-weight: 700;
+    //     line-height: 65px; /* 116.071% */
+    //     max-width: 450px;
+    //   }
+    //   .n-recieved-email {
+    //     color: #fff;
+    //     font-family: Graphik;
+    //     font-size: 16px;
+    //     font-style: normal;
+    //     font-weight: 400;
+    //     line-height: 22px; /* 137.5% */
+    //     max-width: 457px;
+    //   }
+    //   .n-go-to-home {
+    //     width: 432px;
+    //     height: 48px;
+    //     border-radius: 8px;
+    //     background: #ffda00;
+    //   }
+    // }
   }
 }
 
-@media (max-width: 850px) {
-
-  .n-contact-header {
-    .n-contact-logo {
-      width: 125px !important;
+@media (max-width: 550px) {
+  .n-component {
+    .n-contact-header {
+      margin-top: 32px;
+      .n-contact-logo {
+        width: 130.695px;
+        height: 32px;
+        margin-left: 15px;
+      }
+      .n-close-button {
+        display: flex;
+        width: 85px;
+        height: 32px;
+        padding: 18px 32px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+      }
     }
-    .n-close-button {
-      width: 68px !important;
-    height: 30px;
-    }
-  }
-  .n-text-contact {
-    flex-direction: column;
-    margin-top: 40px;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    .n-text-contact {
+      flex-direction: column;
+      margin: 64px 15px 0px;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      .n-text-lets-talk {
+        .n-lets-talk {
+          max-width: 337px;
+          color: #fff;
+          font-family: Feature Display Trial;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 40px; /* 125% */
+        }
+        .n-fill-in-the-form {
+          color: #fff;
+          margin-top: 16px;
+          font-family: Graphik;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 22px; /* 137.5% */
+          max-width: 343px;
+        }
+      }
 
-    .n-text-lets-talk {
-      width: 90%;
-      .n-lets-talk {
+      .n-vertical-line {
+        width: 100%;
+        height: 1px;
+        background-color: #262626;
+        margin-top: 32px;
+      }
+      .n-form-right {
+        .n-form-container {
+          .n-label {
+            color: #9d9d9d;
+            font-family: Graphik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; /* 137.5% */
+            margin-top: 32px;
+            margin-bottom: 0px;
+          }
+          .n-input-contact {
+            width: 343px;
+            height: 48px;
+            outline: none;
+            border-radius: 4px;
+            background: #171717;
+            padding: 16px;
+            box-sizing: border-box;
+            margin-top: 8px;
+            margin-bottom: 0px;
+          }
+          .n-button-contact {
+            width: 343px;
+            height: 48px;
+            border-radius: 4px;
+            background: #ffda00;
+            font-family: Graphik;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+            margin-top: 32px;
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
+    .n-request-message {
+      margin-top: 84px;
+      margin-left: 16px;
+      margin-right: 16px;
+      .n-got-it {
+        color: #fff;
+        font-family: Feature Display Trial;
         font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 40px;
+        width: 343px;
       }
-      .n-fill-in-the-form {
-        font-size: 22px;
+      .n-recieved-email {
+        color: #fff;
+        font-family: Graphik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        width: 342px;
       }
-    }
-
-    .n-vertical-line {
-      width: 90%;
-      height: 2px;
-    }
-    .n-form-right {
-      width: 90%;
-      .n-form-container {
-        .n-label {
-          color: white;
-          font-size: 20px;
-          line-height: 32px;
-          width: 230px;
-        }
-        .n-input-contact {
-          width: 230px;
-          padding: 10px 15px;
-          margin-top: 15px;
-          margin-bottom: 15px;
-          outline: none;
-        }
-        .n-button-contact {
-          width: 263px;
-          padding: 10px 0px;
-          margin-top: 15px;
-          background-color: #fff;
-        }
-       
-      }
-      .n-request-message {
-        font-size: 22px;
-        line-height: 48px;
-        text-align: center;
+      .n-go-to-home {
+        width: 343px;
+        height: 48px;
+        border-radius: 4px;
+        background: #ffda00;
       }
     }
   }

@@ -1,24 +1,41 @@
-<div class="n-container">
+<div class="n-container" [style.height]="elementHeight">
   <div class="n-page-logo-contact" *ngIf="fixedHeader">
     <img
       src="assets/images/traceline-head-logo.png"
       alt="page-logo"
       class="n-page-logo"
-      *ngIf="(scrollPosition < 90 && innerWidth > 850) || (scrollPosition < 50 && innerWidth < 850)"
+      *ngIf="
+        (scrollPosition < 90 && innerWidth > 550) ||
+        (scrollPosition < 23 && innerWidth < 550)
+      "
     />
-    <div *ngIf="(scrollPosition < 90 && innerWidth > 850) || (scrollPosition < 50 && innerWidth < 850) ">
+    <div *ngIf="scrollPosition < 90 && innerWidth > 550">
       <button
         class="n-contact-button"
-        (click)="animatedComponent.openComponent();hideFixedHeader();"
+        (click)="animatedComponent.openComponent(); hideFixedHeader();stopBackgroundScroll();"
       >
         Schedule a call
       </button>
     </div>
-    <div *ngIf="(scrollPosition > 90 && innerWidth> 850) || (scrollPosition > 50 && innerWidth < 850) " class="n-contact-fixed-header">
+    <div *ngIf="scrollPosition < 23 && innerWidth < 550">
+      <img
+        (click)="animatedComponent.openComponent(); hideFixedHeader();stopBackgroundScroll();"
+        src="assets/images/open.png"
+        alt="open"
+        class="n-open-mob"
+      />
+    </div>
+    <div
+      *ngIf="
+        (scrollPosition > 90 && innerWidth > 550) ||
+        (scrollPosition > 23 && innerWidth < 550)
+      "
+      class="n-contact-fixed-header"
+    >
       Unleash Industry 4.0 with Traceline.
       <u
         class="n-contact-fixed-header-call"
-        (click)="animatedComponent.openComponent(); hideFixedHeader();"
+        (click)="animatedComponent.openComponent(); hideFixedHeader();stopBackgroundScroll();"
       >
         Schedule your call.
       </u>
@@ -40,7 +57,7 @@
   </div>
   <button
     class="n-contact-button n-free-call"
-    (click)="animatedComponent.openComponent();hideFixedHeader();"
+    (click)="animatedComponent.openComponent(); hideFixedHeader();stopBackgroundScroll();"
     data-aos="fade-up"
   >
     Step into 4.0 – Request a free call
@@ -58,16 +75,18 @@
     </span>
   </div>
   <div class="n-white-background-page">
-    <div class="n-trusted-by-the-best" data-aos="fade-up">Trusted by the best in the business</div>
+    <div class="n-trusted-by-the-best" data-aos="fade-up">
+      Trusted by the best in the business
+    </div>
     <div class="n-partners" data-aos="fade-up">
       <span *ngFor="let partner of partners">
-        <img [src]="partner.src" alt="_partner_" [class]="partner.class"/>
+        <img [src]="partner.src" alt="_partner_" [class]="partner.class" />
       </span>
     </div>
     <div class="n-flex-row n-text-number-container">
       <div class="n-every-machine" data-aos="fade-up">
         <div id="paragraph-container">
-        <span *ngFor="let word of paragraphArray">{{word}} </span>
+          <div *ngFor="let word of paragraphArray">{{ word }}.</div>
         </div>
         <!-- Every machine, optimized to perfection. Raw materials? Always in perfect
         sync. Product defects? Now a distant memory. Supply chain insights. From
@@ -108,10 +127,14 @@
       operations and amplified productivity in your manufacturing journey. No
       more fragmented systems or scattered data; just streamlined success.
     </div>
-    <div class="n-card-text-img-side" data-aos="fade-up">
+    <div
+      class="n-card-text-img-side"
+      data-aos="fade-up"
+      *ngIf="innerWidth > 550; else mesMastery"
+    >
       <div class="n-card-text">
         <div class="n-amplify-operations">
-          Amplify operations with MES Mastery.
+          MES Mastery: Boosting Manufacturing Operations.
         </div>
         <div class="n-streamline-manufacturing">
           Streamline manufacturing processes with Traceline's MES. Achieve
@@ -130,19 +153,46 @@
         </ul>
       </div>
       <img
-        [src]="(innerWidth > 850) ? 'assets/images/guy-with-tablet.png' : 'assets/images/guy-with-tablet-mob.jpg' "
+        [src]="
+          innerWidth > 550
+            ? 'assets/images/guy-with-tablet.png'
+            : 'assets/images/guy-with-tablet-mob.jpg'
+        "
         alt="guy_with_tablet"
         class="n-guy-with-tablet"
       />
     </div>
+    <ng-template #mesMastery>
+      <app-card-mobile
+        [cardMobileContent]="{
+          heading: 'MES Mastery: Boosting Manufacturing Operations.',
+          list: [
+            'Real-Time Production Monitoring',
+            'Enhanced Quality Control',
+            'Raw Material Store Automation with FIFO Control',
+            'Planning and Production Interfacing System',
+            'WIP - Track and trace system with m/c integration',
+            'FG Automation',
+            'Digital Warehouse'
+          ],
+          description:
+            'Streamline manufacturing processes with Traceline\'s MES. Achieve
+      real-time monitoring, quality control, and full automation across
+      various levels, from raw materials to finished goods.',
+          cardStyle: {
+            'margin-top': '40px'
+          },
+          image: 'url(assets/images/guy-with-tablet-mob.png)'
+        }"
+      ></app-card-mobile>
+    </ng-template>
   </div>
-  <div
-    class="n-flex-row n-flex-wrap n-card-holder"
-  >
+  <div [class]="innerWidth >550 ? 'n-flex-wrap n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 48px' : 'margin-top : 16px' " >
     <app-card
-    class="n-app-card"
-    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
-    data-aos="fade-up"
+      class="n-app-card"
+      *ngIf="innerWidth > 550; else optimizeEquipment"
+      [style]="innerWidth < 550 ? 'width: 100%;' : ''"
+      data-aos="fade-up"
       [cardContent]="{
         heading: 'Optimize Equipment Efficiency (OEE)',
         list: [
@@ -154,16 +204,38 @@
         ],
         description:
           'Maximize efficiency with Traceline\'s OEE module. Measure performance, schedule preventive maintenance, and monitor asset health to ensure optimal functioning.',
-        cardStyle: {
+        cardStyle: {},
+        headStyle: {
           'background-image': 'url(assets/images/man-with-blue-cap.png)',
-          'margin-top': '48px'
+          padding: '88px 40px 140px'
         }
       }"
     ></app-card>
+
+    <ng-template #optimizeEquipment>
+      <app-card-mobile
+        [cardMobileContent]="{
+          heading: 'Optimize Equipment Efficiency (OEE)',
+          list: [
+            'OEE measurement',
+            'Proactive scheduling of preventive maintenance tasks',
+            'Asset health and performance monitoring',
+            'Real-time alerts for maintenance needs',
+            'Automated Defect Detection and Prevention'
+          ],
+          description:
+            'Maximize efficiency with Traceline\'s OEE module. Measure performance, schedule preventive maintenance, and monitor asset health to ensure optimal functioning.',
+          cardStyle: {},
+          image: 'url(assets/images/man-with-blue-cap.png)'
+        }"
+      ></app-card-mobile>
+    </ng-template>
+
     <app-card
-    data-aos="fade-up"
-    class="n-app-card"
-    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
+      data-aos="fade-up"
+      class="n-app-card"
+      *ngIf="innerWidth > 550; else afterMarket"
+      [style]="innerWidth < 550 ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Aftermarket Services & Customer Engagement',
         list: [
@@ -178,20 +250,49 @@
         ],
         description:
           'Build customer loyalty with Traceline\'s Aftermarket Services. From spare parts management to personalized marketing, create an exceptional customer experience.',
-        cardStyle: {
+        cardStyle: {},
+        headStyle: {
           'background-image': 'url(assets/images/woman-working.png)',
-          'margin-top': '48px'
+          padding: '88px 40px 140px'
         }
       }"
     ></app-card>
+
+    <ng-template #afterMarket>
+      <app-card-mobile
+        [cardMobileContent]="{
+        heading: 'Aftermarket Services & Customer Engagement',
+        list: [
+          'Spare Parts Management',
+          'Predictive Maintenance',
+          'Technical Support and Training',
+          'Equipment Upgrades and Retrofits',
+          'Multi-Channel Support',
+          'Customer Feedback and Analytics',
+          'Personalized Marketing and Sales',
+          'Customer Experience Management'
+        ],
+        description:
+          'Build customer loyalty with Traceline\'s Aftermarket Services. From spare parts management to personalized marketing, create an exceptional customer experience.',
+        cardStyle: {
+          'margin-top' :'16px'
+        },
+          image: 'url(assets/images/woman-working.png)',
+      }"
+      ></app-card-mobile>
+    </ng-template>
   </div>
   <div class="n-game-changer-sundaram" data-aos="fade-up">
     <div class="n-game-changer">“Game Changer”</div>
     <div class="n-sundaram">Sundaram Clayton</div>
   </div>
-  <div class="n-card-text-img-side-2" data-aos="fade-up">
+  <div class="n-card-text-img-side-2" data-aos="fade-up" *ngIf="innerWidth > 550; else streamlineSupply">
     <img
-    [src]="(innerWidth > 850) ? 'assets/images/ship.png':'assets/images/ship-mob.jpg'"
+      [src]="
+        innerWidth > 550
+          ? 'assets/images/ship.png'
+          : 'assets/images/ship-mob.jpg'
+      "
       alt="ship_carrying_goods"
       class="n-ship-carrying-goods"
     />
@@ -212,17 +313,38 @@
       </ul>
     </div>
   </div>
+  <ng-template #streamlineSupply>
+    <app-card-mobile
+      [cardMobileContent]="{
+        heading: 'Streamline Supply Chain & Logistics',
+        list: [
+        'Real-time tracking and tracing of goods',
+        'Custom built SAP extension for vendor management',
+        'Enhanced visibility through vehicle GPS system',
+        'Streamlined logistics operations for improved efficiency',
+        'Accurate and reliable shipment processes'
+        ],
+        description:
+          'Enhance your supply chain with Traceline. Achieve real-time tracking,
+          vendor management, and streamlined logistics for accurate and reliable
+          processes.',
+        cardStyle: {
+          'margin-top': '32px'
+        },
+        image: 'url(assets/images/ship-mob.png)'
+      }"
+    ></app-card-mobile>
+  </ng-template>
   <div class="n-game-changer-sundaram" data-aos="fade-up">
     <div class="n-game-changer">“A Manufacturing Marvel”</div>
     <div class="n-sundaram">TVS Motors</div>
   </div>
-  <div
-    class="n-flex-row n-flex-wrap n-card-holder"
-  >
+  <div [class]="innerWidth >550 ? 'n-flex-wrap n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 72px' : 'margin-top : 16px' ">
     <app-card
-    data-aos="fade-up"
-    class="n-app-card"
-    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
+      data-aos="fade-up"
+      class="n-app-card"
+      *ngIf="innerWidth > 550; else fieldService"
+      [style]="innerWidth < 550 ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Field Service Management Platform',
         list: [
@@ -237,16 +359,42 @@
         ],
         description:
           'Empower your service teams with Traceline\'s Service Management Platform. Smart scheduling, predictive maintenance, and real-time visibility make service seamless.',
-        cardStyle: {
+        cardStyle: {},
+        headStyle: {
           'background-image': 'url(assets/images/man-with-white-cap.png)',
-          'margin-top': '72px'
+          padding: '88px 40px 140px'
         }
       }"
     ></app-card>
+
+
+    <ng-template #fieldService>
+      <app-card-mobile
+        [cardMobileContent]="{
+          heading: 'Field Service Management Platform',
+          list: [
+            'Smart Scheduling and Dispatch',
+            'Automated Work Order Management',
+            'Mobile Field Service',
+            'Predictive Maintenance',
+            'Real-Time Visibility',
+            'Inventory Management',
+            'Enhanced Training and Support',
+            'Analytics and Reporting'
+          ],
+          description:
+            'Empower your service teams with Traceline\'s Service Management Platform. Smart scheduling, predictive maintenance, and real-time visibility make service seamless.',
+          cardStyle: {},
+          image: 'url(assets/images/man-with-white-cap.png)',
+        }"
+      ></app-card-mobile>
+    </ng-template>
+
     <app-card
-    data-aos="fade-up"
-    class="n-app-card"
-    [style]="(innerWidth < 850) ? 'width: 100%;' : ''"
+      data-aos="fade-up"
+      class="n-app-card"
+      *ngIf="innerWidth > 550; else digitalCore"
+      [style]="innerWidth < 550 ? 'width: 100%;' : ''"
       [cardContent]="{
         heading: 'Digital Core & Innovation',
         list: [
@@ -260,14 +408,39 @@
         ],
         description:
           'Fuel innovation with Traceline\'s Digital Core. Utilize cutting-edge technologies such as IoT, AI, and cybersecurity to transform your manufacturing landscape.',
-        cardStyle: {
+        cardStyle: {},
+        headStyle: {
           'background-image': 'url(assets/images/buildings-at-night.png)',
-          'margin-top': '72px'
+          padding: '88px 60px 140px 40px'
         }
       }"
     ></app-card>
+
+    <ng-template #digitalCore>
+      <app-card-mobile
+        [cardMobileContent]="{
+          heading: 'Digital Core & Innovation',
+          list: [
+            'SAP Extensions',
+            'Cloud Adoption',
+            'Integrating IoT',
+            'Private 5G',
+            'AI and Machine Learning',
+            'Cybersecurity',
+            'Edge Computing'
+          ],
+          description:
+            'Fuel innovation with Traceline\'s Digital Core. Utilize cutting-edge technologies such as IoT, AI, and cybersecurity to transform your manufacturing landscape.',
+          cardStyle: {
+            'margin-top':'16px'
+          },
+          image: 'url(assets/images/buildings-at-night.png)',
+            
+        }"
+      ></app-card-mobile>
+    </ng-template>
   </div>
-  <div class="n-card-text-img-side" style="margin-top: 72px" data-aos="fade-up">
+  <div class="n-card-text-img-side" style="margin-top: 72px" data-aos="fade-up" *ngIf="innerWidth > 550; else digitalWarehouse">
     <div class="n-card-text">
       <div class="n-amplify-operations">
         Digital Warehouse Management System
@@ -287,11 +460,37 @@
       </ul>
     </div>
     <img
-    [src]="(innerWidth > 850) ? 'assets/images/smiling-man.png':'assets/images/smiling-man-mob.jpg'"
+      [src]="
+        innerWidth > 550
+          ? 'assets/images/smiling-man.png'
+          : 'assets/images/smiling-man-mob.jpg'
+      "
       alt="guy_with_tablet"
       class="n-guy-with-tablet"
     />
   </div>
+  <ng-template #digitalWarehouse>
+    <app-card-mobile
+      [cardMobileContent]="{
+        heading: 'Digital Warehouse Management System',
+        list: [
+        'Real-Time Inventory Management',
+        'Order Fulfillment Optimization',
+        'Real-Time Inventory Tracking',
+        'Integration with Other Systems',
+        'Space Optimization'
+        ],
+        description:
+          'Transform inventory management with Traceline\'s Digital Warehouse
+          System. Optimize space, integrate systems, and gain real-time visibility
+          into your inventory.',
+        cardStyle: {
+          'margin-top': '16px'
+        },
+        image: 'url(assets/images/smiling-man-mob.png)'
+      }"
+    ></app-card-mobile>
+  </ng-template>
   <div class="n-good-news-with-traceline">
     <div class="n-good-news" data-aos="fade-up">
       Good news? Everything ties back to SAP. In good way.
@@ -311,7 +510,9 @@
   </div>
   <div class="n-flex-row n-roi-swinging-doodle">
     <div>
-      <div class="n-maximize-your-roi" data-aos="fade-up">Maximize your ROI</div>
+      <div class="n-maximize-your-roi" data-aos="fade-up">
+        Maximize your ROI
+      </div>
       <div class="n-with-traceline-youre" data-aos="fade-up">
         With Traceline, you're not just investing in software; you're ensuring a
         future of optimized manufacturing. And it's not just our word: industry
@@ -370,10 +571,18 @@
     <div class="n-step-into-future" data-aos="fade-up">
       Step into the future of manufacturing 4.0 with Traceline.
     </div>
-    <button class="n-stay-ahead" (click)="animatedComponent.openComponent();hideFixedHeader();" data-aos="fade-up">
+    <button
+      class="n-stay-ahead"
+      (click)="animatedComponent.openComponent(); hideFixedHeader();stopBackgroundScroll();"
+      data-aos="fade-up"
+    >
       Stay ahead of the curve – Request a free call
     </button>
   </div>
   <app-contactus-footer data-aos="fade-up"></app-contactus-footer>
-  <app-contact #animatedComponent [showFixedHeaderFunction]="showFixedHeader" ></app-contact>
+  <app-contact
+    #animatedComponent
+    [showFixedHeaderFunction]="showFixedHeader"
+    [startBackgroundScroll]="startBackgroundScroll"
+  ></app-contact>
 </div>

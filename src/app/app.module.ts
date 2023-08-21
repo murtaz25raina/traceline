@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 import { ContactUsFooterComponent } from './components/contactus-footer/contactus-footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardMobileComponent } from './components/card-mobile/card.mobile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DefaultLayoutComponent,
     ContactComponent,
     CardComponent,
-    ContactUsFooterComponent
+    ContactUsFooterComponent,
+    CardMobileComponent
   ],
   imports: [
     BrowserModule,
