@@ -803,7 +803,7 @@
       font-size: 14px;
     }
     .n-contact-fixed-header {
-      font-size: 14px;
+      font-size: 11px;
     }
   }
   .n-page-logo-contact.n-make-header {
@@ -1128,12 +1128,12 @@
   }
 
   .n-step-into-future-contact {
-    padding: 0px 20px;
     box-sizing: border-box;
     margin-top: 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .n-step-into-future {
       color: #000;
       text-align: center;
@@ -1142,6 +1142,8 @@
       font-style: normal;
       font-weight: 700;
       line-height: 32px; /* 133.333% */
+      margin-left: 15px;
+      margin-right: 15px;
     }
     .n-stay-ahead {
       display: flex;
@@ -1160,6 +1162,7 @@
       font-weight: 700;
       line-height: 16px; /* 100% */
       letter-spacing: -0.32px;
+      margin-top: 16px;
     }
   }
   .n-horizontal-line {
@@ -1232,7 +1235,7 @@
   .n-page-logo-contact.n-make-header {
     text-align: center;
     .n-contact-fixed-header {
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 }

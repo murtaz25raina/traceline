@@ -243,6 +243,7 @@
 
 @media (max-width: 550px) {
   .n-contactus-footer {
+    margin-top: 56px;
     .n-traceline-logo-footer {
       margin-left: 20px;
       width: 130.695px;
@@ -263,7 +264,7 @@
           gap: 16px;
           .n-email-input {
             width: 100%;
-            min-width: 343px;
+            // min-width: 343px;
             box-sizing: border-box;
             color: #fff;
             font-family: Graphik;
@@ -275,7 +276,7 @@
           }
           .n-email-submit-button {
             width: 100%;
-            min-width: 343px;
+            // min-width: 343px;
             border-radius: 4px;
           }
         }
