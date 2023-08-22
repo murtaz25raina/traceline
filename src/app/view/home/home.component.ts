@@ -38,7 +38,12 @@ export class HomeComponent {
     const elementHeading = this.elementRef.nativeElement.querySelector(
       '.n-power-it-with-traceline'
     );
+    if(this.innerWidth<550){
     this.renderer.removeClass(elementHeading, 'n-page-heading-mt-251');
+    }
+    else{
+    this.renderer.removeClass(elementHeading, 'n-page-heading-mt-268');
+    }
     this.fixedHeader = false;
   };
   showFixedHeader = () => {

@@ -8,13 +8,13 @@
       />
       <button
         class="n-close-button"
-        (click)="closeComponent(); showFixedHeader();scrollNormal();"
+        (click)="scrollNormal();closeComponent(); showFixedHeader();"
         *ngIf="!isSubmitted"
       >
         Close
       </button>
     </div>
-    <div class="n-text-contact-container">
+    <div class="n-text-contact-container" *ngIf="!isSubmitted">
     <div class="n-text-contact" *ngIf="!isSubmitted">
       <div class="n-text-lets-talk" *ngIf="!isSubmitted">
         <span class="n-lets-talk">
@@ -77,7 +77,7 @@
         <div class="n-recieved-email">
           We’ve received your email. Someone nice will read it and respond to you within 24 hours. Please smile, you’re looking nice today. And enjoy the rest of your Friday.
         </div>
-        <button class="n-go-to-home" (click)="closeComponent(); showFixedHeader();scrollNormal();">
+        <button class="n-go-to-home" (click)="scrollNormal();closeComponent(); showFixedHeader()">
           Go back to homepage
         </button>
       </div>
