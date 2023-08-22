@@ -154,9 +154,9 @@
       </div>
       <img
         [src]="
-          innerWidth > 550
+          innerWidth > 1250
             ? 'assets/images/guy-with-tablet.png'
-            : 'assets/images/guy-with-tablet-mob.jpg'
+            : 'assets/images/guy-with-tablet-tab.jpg'
         "
         alt="guy_with_tablet"
         class="n-guy-with-tablet"
@@ -187,7 +187,7 @@
       ></app-card-mobile>
     </ng-template>
   </div>
-  <div [class]="innerWidth >550 ? 'n-flex-wrap n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 48px' : 'margin-top : 16px' " >
+  <div [class]="innerWidth >550 ? 'n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 48px' : 'margin-top : 16px' " >
     <app-card
       class="n-app-card"
       *ngIf="innerWidth > 550; else optimizeEquipment"
@@ -289,9 +289,9 @@
   <div class="n-card-text-img-side-2" data-aos="fade-up" *ngIf="innerWidth > 550; else streamlineSupply">
     <img
       [src]="
-        innerWidth > 550
+        innerWidth > 1250
           ? 'assets/images/ship.png'
-          : 'assets/images/ship-mob.jpg'
+          : 'assets/images/ship-tab.jpg'
       "
       alt="ship_carrying_goods"
       class="n-ship-carrying-goods"
@@ -339,7 +339,7 @@
     <div class="n-game-changer">“A Manufacturing Marvel”</div>
     <div class="n-sundaram">TVS Motors</div>
   </div>
-  <div [class]="innerWidth >550 ? 'n-flex-wrap n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 72px' : 'margin-top : 16px' ">
+  <div [class]="innerWidth >550 ? 'n-card-holder' : '' " [style]="innerWidth > 550 ? 'margin-top : 72px' : 'margin-top : 16px' ">
     <app-card
       data-aos="fade-up"
       class="n-app-card"
@@ -461,9 +461,9 @@
     </div>
     <img
       [src]="
-        innerWidth > 550
+        innerWidth > 1250
           ? 'assets/images/smiling-man.png'
-          : 'assets/images/smiling-man-mob.jpg'
+          : 'assets/images/smiling-man-tab.jpg'
       "
       alt="guy_with_tablet"
       class="n-guy-with-tablet"

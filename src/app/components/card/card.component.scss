@@ -5,6 +5,7 @@
   border-radius: 64px;
   padding: 1px 0px;
   background-color: #fff;
+  overflow: hidden;
   .n-card-heading {
     color: #fff;
     font-family: Feature Display Trial;
@@ -48,6 +49,18 @@
     font-weight: 400;
     margin-left: 40px;
     line-height: 28px; /* 155.556% */
+  }
+}
+
+
+@media (min-width:551px) and (max-width: 1250px) {
+  .n-card-container{
+    .n-card-heading{
+      min-width: 600px;
+      margin-top: -55px;
+      padding-top: 143px !important;
+      height: 400px;
+    }
   }
 }
 // @media (max-width: 1250px) {

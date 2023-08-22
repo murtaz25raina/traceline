@@ -35,11 +35,11 @@ export class HomeComponent {
   ];
 
   hideFixedHeader = () => {
-    this.fixedHeader = false;
     const elementHeading = this.elementRef.nativeElement.querySelector(
       '.n-power-it-with-traceline'
     );
     this.renderer.removeClass(elementHeading, 'n-page-heading-mt-251');
+    this.fixedHeader = false;
   };
   showFixedHeader = () => {
     this.fixedHeader = true;
