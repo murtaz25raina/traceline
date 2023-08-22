@@ -11,6 +11,13 @@ export class HomeComponent {
   fixedHeader: boolean = true;
   elementHeight = "auto"
 
+  pageTopLogo = "assets/images/traceline-head-logo.svg";
+  ship = 'assets/images/ship.svg';
+  guyWithTablet = 'assets/images/guy-with-tablet.svg';
+  smilingMan='assets/images/smiling-man.svg';
+  threePeopleLookingAtTablet = 'assets/images/three-people-looking-at-tablet.svg';
+
+
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   paragraph =
