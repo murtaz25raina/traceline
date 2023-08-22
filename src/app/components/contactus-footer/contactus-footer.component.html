@@ -1,5 +1,5 @@
 <div class="n-contactus-footer">
-    <img src="assets/images/traceline-logo-footer.png" alt="traceline-logo-footer" class="n-traceline-logo-footer"/>
+    <img src="assets/images/traceline-logo-footer.svg" alt="traceline-logo-footer" class="n-traceline-logo-footer" (click)="scrollToTop()"/>
     <div class="n-footer-contact">
         <div class="n-contact-fetch-email" >
             <div *ngIf="!isFormSubmitted">
@@ -58,7 +58,7 @@
             </div>
             <div class="n-copyright">© Copyright 2022 Netcon Technologies. All rights reserved. All logos and trademarks used belong to their respective owners.</div>
         </div>
-        <div class="n-powered-by-netcon">
+        <div class="n-powered-by-netcon" (click)="toNetcon()">
             Powered by Netcon,  a digital transformation specialist
         </div>
     </div>

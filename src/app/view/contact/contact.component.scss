@@ -29,7 +29,9 @@
     margin-top: 96px;
     .n-contact-logo {
       margin-left: 96px;
-      width: 175px;
+      width: 261.39px;
+      height: 64px;
+      cursor: pointer;
     }
     .n-close-button {
       display: inline-flex;
@@ -41,8 +43,16 @@
       background: #fff;
       margin-right: 96px;
       cursor: pointer;
-      border: 0px;
-      background-color: white;
+      color: #000;
+      text-align: center;
+      font-family: Graphik;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px; /* 88.889% */
+      letter-spacing: -0.36px;
+      width: 109px;
+      height: 52px;
     }
   }
 }
@@ -116,9 +126,9 @@
     }
   }
   .n-vertical-line {
-    width: 2px;
-    height: 400px;
-    background-color: #fff;
+    width: 1px;
+    height: 488px;
+    background: #262626;
   }
   .n-form-right {
     display: flex;
@@ -135,7 +145,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: 22px; /* 137.5% */
-        margin-bottom: 8px;
 
         // width: 330px;
       }
@@ -150,6 +159,12 @@
         padding: 16px 24px;
         box-sizing: border-box;
         outline: none;
+        color: #9da3ae;
+        font-family: Graphik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 100% */
       }
       .n-button-contact {
         width: 432px;
@@ -197,7 +212,6 @@
 }
 
 @media (min-width: 551px) and (max-width: 1250px) {
-
   .n-component {
     .n-contact-header {
       margin-top: 32px;
@@ -217,9 +231,9 @@
       }
     }
 
-    .n-text-contact-container{
-     height: 600px;
-     overflow: scroll; 
+    .n-text-contact-container {
+      height: 600px;
+      overflow: scroll;
     }
     .n-text-contact {
       flex-direction: column;
@@ -331,7 +345,6 @@
       }
     }
   }
-
 }
 
 @media (max-width: 550px) {
@@ -353,10 +366,10 @@
         margin-right: 15px;
       }
     }
-    .n-text-contact-container{
+    .n-text-contact-container {
       height: 600px;
-      overflow: scroll; 
-     }
+      overflow: scroll;
+    }
     .n-text-contact {
       flex-direction: column;
       margin: 64px 15px 0px;

@@ -14,15 +14,22 @@
   }
   .n-contact-fixed-header {
     color: #fff;
-    font-size: 18px;
-    font-weight: 500;
+  text-align: center;
+  font-family: Graphik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.36px;
   }
   .n-contact-fixed-header-call {
     cursor: pointer;
   }
-  // .n-page-logo {
-  //   // margin-top: 96px;
-  // }
+  .n-page-logo {
+    width: 261.39px;
+    height: 64px;
+    cursor: pointer;
+  }
 }
 
 .n-page-logo-contact.n-make-header {
@@ -51,7 +58,7 @@
   gap: 8px;
   color: #fff;
   text-align: center;
-  font-family: Lab Grotesque;
+  font-family: Graphik;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -78,13 +85,38 @@
 }
 
 .n-page-top-image {
-  width: 100%;
+  // width: 100%;
+  width: fit-content;
   margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  .n-top-1 {
+    height: 392px;
+  }
+  .n-top-2,
+  .n-top-3,
+  .n-top-4,
+  .n-top-5,
+  .n-top-6,
+  .n-top-7,
+  .n-top-8,
+  .n-top-9,
+  .n-top-10,
+  .n-top-11,
+  .n-top-12 {
+    width: 106px;
+    height: 392px;
+  }
+
+  .n-top-13 {
+    height: 392px;
+  }
 }
 
 .n-about-traceline {
   color: #000;
-  font-family: Lab Grotesque;
+  font-family: Graphik;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -94,7 +126,7 @@
   margin-top: 47px;
   .n-complete {
     color: #000;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
@@ -129,7 +161,7 @@
     }
     .n-traceline-point-text {
       color: #000;
-      font-family: Lab Grotesque;
+      font-family: Graphik;
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
@@ -147,7 +179,7 @@
   .n-trusted-by-the-best {
     color: #1a1a1a;
     text-align: center;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 22px;
     font-style: normal;
     font-weight: 500;
@@ -157,12 +189,10 @@
   .n-partners {
     display: flex;
     flex-direction: row;
-    gap: 36px;
+    // gap: 36px;
     flex-wrap: wrap;
-    justify-content: center;
-
+    justify-content: space-between;
     margin: 32px 96px 0px;
-    width: fit-content;
     .n-partner-lt {
       width: 64px;
       height: 64px;
@@ -269,7 +299,7 @@
 .n-traceline-consolidates {
   color: #000;
   text-align: center;
-  font-family: Lab Grotesque;
+  font-family: Graphik;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -283,18 +313,19 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   gap: 58px;
   border-radius: 64px;
   background: #fff;
   max-width: 1248px;
-  min-height: 664px;
+  height: 664px;
   .n-card-text {
-    margin: 96px 0px 84px 82px;
+    margin-left: 82px;
 
     .n-amplify-operations {
       color: #000;
       font-family: Feature Display Trial;
-      font-size: 48px;
+      font-size: 3vw;
       font-style: normal;
       font-weight: 700;
       line-height: 64px;
@@ -331,7 +362,7 @@
   }
   .n-guy-with-tablet {
     width: 506px;
-    min-height: 664px;
+    height: 664px;
     margin-right: -5px;
   }
 }
@@ -366,10 +397,10 @@
   border-radius: 64px;
   background: #fff;
   max-width: 1248px;
-  max-height: 664px;
+  height: 664px;
   .n-ship-carrying-goods {
     width: 508px;
-    min-height: 664px;
+    height: 664px;
     margin-right: 0px;
   }
   .n-card-text-2 {
@@ -378,7 +409,7 @@
       // max-width: 530px;
       color: #000;
       font-family: Feature Display Trial;
-      font-size: 48px;
+      font-size: 3vw;
       font-style: normal;
       font-weight: 700;
       line-height: 64px; /* 133.333% */
@@ -419,8 +450,8 @@
   margin: 112px auto 0px;
   // width: fit-content;
   display: flex;
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
   .n-good-news {
     max-width: 719px;
     color: #000;
@@ -436,7 +467,7 @@
     max-width: 847px;
     color: #000;
     text-align: center;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -475,7 +506,7 @@
 
       .n-swinging-doodle-description {
         color: #000;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -495,7 +526,7 @@
   }
   .n-with-traceline-youre {
     color: #000;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -536,7 +567,7 @@
     background: #000;
     color: #fff;
     text-align: center;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -567,53 +598,54 @@
     margin-top: 50px;
     margin-left: 35px;
   }
-  .n-page-logo-contact{
+  .n-page-logo-contact {
     margin: 96px 30px 0px;
   }
-  .n-power-it-with-traceline{
+  .n-power-it-with-traceline {
     margin-left: 30px;
     margin-right: 30px;
   }
 
-  .n-page-top-image{
-    width: 180%;
+  .n-page-top-image {
+    // width: 180%;
   }
 
-  .n-about-traceline{
+  .n-about-traceline {
     margin-left: 30px;
   }
-  .n-free-call{
+  .n-free-call {
     margin-left: 30px;
   }
-  .n-arrow-down{
+  .n-arrow-down {
     margin-left: 32px;
   }
-  .n-traceline-points{
+  .n-traceline-points {
     margin-left: 30px;
     margin-right: 30px;
   }
 
-  .n-white-background-page{
+  .n-white-background-page {
     margin-top: 80px;
-    .n-trusted-by-the-best{
+    .n-trusted-by-the-best {
       margin-top: 50px;
     }
-    .n-partners{
+    .n-partners {
       margin: 32px 30px 0px;
       justify-content: space-evenly;
+      gap: 10px;
     }
-    .n-text-number-container{
+    .n-text-number-container {
       margin: 50px 30px 50px;
       flex-wrap: wrap;
       row-gap: 50px;
-      .n-attributes{
+      .n-attributes {
         flex-direction: row;
         justify-content: space-between;
         flex-grow: 1;
         flex-wrap: wrap;
-        .n-attribute{
+        .n-attribute {
           align-items: flex-start;
-          .n-attribute-text{
+          .n-attribute-text {
             text-align: left;
             width: 230px;
           }
@@ -622,40 +654,39 @@
     }
   }
 
-  .n-not-every-tool{
+  .n-not-every-tool {
     max-width: calc(100% - 60px);
   }
-  .n-traceline-consolidates{
+  .n-traceline-consolidates {
     max-width: calc(100% - 60px);
   }
-  
 
-  .n-card-text-img-side{
+  .n-card-text-img-side {
     border-radius: 50%;
     position: relative;
     margin: 50px 30px 0px;
     min-width: fit-content;
-    .n-card-text{
+    .n-card-text {
       position: absolute;
       margin: 0px;
       bottom: 30px;
       left: 30px;
       right: 30px;
       z-index: 10;
-      .n-amplify-operations{
+      .n-amplify-operations {
         color: #fff;
       }
-      .n-we-can-help-you{
+      .n-we-can-help-you {
         color: #fff;
       }
-      .n-we-can-help-you-list{
+      .n-we-can-help-you-list {
         color: #fff;
       }
-      .n-streamline-manufacturing{
+      .n-streamline-manufacturing {
         color: #fff;
       }
     }
-    .n-guy-with-tablet{
+    .n-guy-with-tablet {
       width: 100%;
       border-radius: 98px;
       margin: 0px;
@@ -663,33 +694,32 @@
     }
   }
 
-
-  .n-card-text-img-side-2{
+  .n-card-text-img-side-2 {
     border-radius: 50%;
     position: relative;
     margin: 50px 30px 0px;
     min-width: fit-content;
-    .n-card-text-2{
+    .n-card-text-2 {
       position: absolute;
       z-index: 10;
       margin: 0px;
       bottom: 30px;
       left: 30px;
       right: 30px;
-      .n-streamline-supply{
+      .n-streamline-supply {
         color: #fff;
       }
-      .n-we-can-help-you{
+      .n-we-can-help-you {
         color: #fff;
       }
-      .n-we-can-help-you-list{
+      .n-we-can-help-you-list {
         color: #fff;
       }
-      .n-enchance-your-supply{
+      .n-enchance-your-supply {
         color: #fff;
       }
     }
-    .n-ship-carrying-goods{
+    .n-ship-carrying-goods {
       width: 100%;
       border-radius: 98px;
       margin: 0px;
@@ -697,59 +727,58 @@
     }
   }
 
-  .n-card-holder{
+  .n-card-holder {
     margin: 0px 30px;
     flex-wrap: wrap;
     row-gap: 50px;
-    .n-app-card{
+    .n-app-card {
       width: 100%;
-
     }
   }
 
- .n-step-into-future-contact{
-  margin: 80px auto 0px;
-  max-width: calc(100% - 60px);
- }
- .n-horizontal-line{
-  max-width: 1248px;
+  .n-step-into-future-contact {
+    margin: 80px auto 0px;
+    max-width: calc(100% - 60px);
+  }
+  .n-horizontal-line {
+    max-width: 1248px;
     width: auto;
     margin: 80px 30px 0px;
- }
- .n-roi-swinging-doodle{
-  flex-wrap: wrap;
-  row-gap: 50px;
-  margin: 80px 30px 0px;
-  .n-swinging-doodles{
-    flex-direction: row;
-    overflow-x: scroll;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    .n-swinging-doodle{
-      flex-direction: column;
-      .n-swinging-doodle-description{
-        width: 400px;
+  }
+  .n-roi-swinging-doodle {
+    flex-wrap: wrap;
+    row-gap: 50px;
+    margin: 80px 0px 0px 30px;
+    .n-swinging-doodles {
+      flex-direction: row;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .n-swinging-doodle {
+        flex-direction: column;
+        .n-swinging-doodle-description {
+          width: 400px;
+        }
       }
     }
   }
- }
 
- .n-good-news-with-traceline{
-  width: auto;
+  .n-good-news-with-traceline {
+    width: auto;
 
-  .n-good-news{
-    max-width: calc(100% - 60px);
+    .n-good-news {
+      max-width: calc(100% - 60px);
+    }
+    .n-with-traceline {
+      max-width: calc(100% - 60px);
+    }
+    .n-three-people-looking-at-tablet {
+      max-width: calc(100% - 60px);
+      margin-left: 30px;
+      margin-right: 30px;
+    }
   }
-  .n-with-traceline{
-    max-width: calc(100% - 60px);
-  }
-  .n-three-people-looking-at-tablet{
-    max-width: calc(100% - 60px);
-    margin-left: 30px;
-    margin-right: 30px;
-  }
- }
 }
 
 @media (max-width: 550px) {
@@ -787,8 +816,30 @@
   }
 
   .n-page-top-image {
-    width: 270%;
+    // width: 270%;
     margin-top: 24px;
+    gap: 12.57px;
+    .n-top-1 {
+      height: 292px;
+    }
+    .n-top-2,
+    .n-top-3,
+    .n-top-4,
+    .n-top-5,
+    .n-top-6,
+    .n-top-7,
+    .n-top-8,
+    .n-top-9,
+    .n-top-10,
+    .n-top-11,
+    .n-top-12 {
+      width: 78px;
+      height: 292px;
+    }
+  
+    .n-top-13 {
+      height: 292px;
+    }
   }
 
   .n-about-traceline {
@@ -801,14 +852,19 @@
     font-weight: 400;
     line-height: 22px; /* 137.5% */
     .n-complete {
+      color: #000;
+      font-family: Graphik;
+      font-size: 16px;
+      font-style: normal;
       font-weight: 700;
+      line-height: 22px;
     }
   }
 
   .n-free-call {
     margin: 16px 15px 0px;
     display: flex;
-    width: 305.538px;
+    width: fit-content;
     height: 48px;
     padding: 18px 32px;
     justify-content: center;
@@ -817,7 +873,7 @@
     background: #000;
     color: #fff;
     text-align: center;
-    font-family: Lab Grotesque;
+    font-family: Graphik;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -854,7 +910,9 @@
   .n-partners {
     margin: 24px 12px 0px !important;
     gap: 24px !important;
-    justify-content: space-evenly !important;
+    row-gap: 32px !important;
+    column-gap: 15px !important;
+    justify-content: center !important;
     .n-partner-lt {
       width: 40px !important;
       height: 40px !important;
@@ -869,8 +927,7 @@
     }
     .n-partner-sevenf {
       width: 40px !important;
-      height: 40px !important;
-    }
+      height: 40px !important;    }
     .n-partner-viseon {
       width: 50.7px !important;
       height: 32px !important;
@@ -1031,7 +1088,7 @@
   .n-roi-swinging-doodle {
     flex-direction: column;
     gap: 26px;
-    margin-right: 20px;
+    margin-right: 0px;
     margin-left: 20px;
     margin-top: 64px;
     box-sizing: border-box;
@@ -1117,7 +1174,7 @@
       background: #000;
       color: #fff;
       text-align: center;
-      font-family: Lab Grotesque;
+      font-family: Graphik;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;

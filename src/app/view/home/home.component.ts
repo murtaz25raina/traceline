@@ -24,14 +24,30 @@ export class HomeComponent {
     'IT Infrastructure Modernization',
   ];
   partners = [
-    {src:'assets/images/partner-1.png',class:'n-partner-lt'},
-    {src:'assets/images/partner-2.png',class:'n-partner-elgi'},
-    {src:'assets/images/partner-3.png',class:'n-partner-mak'},
-    {src:'assets/images/partner-4.png',class:'n-partner-sevenf'},
-    {src:'assets/images/partner-5.png',class:'n-partner-viseon'},
-    {src:'assets/images/partner-6.png',class:'n-partner-fss'},
-    {src:'assets/images/partner-7.png',class:'n-partner-hands'},
-    {src:'assets/images/partner-8.png',class:'n-partner-sundaram'},
+    {src:'assets/images/partner-1.svg',class:'n-partner-lt'},
+    {src:'assets/images/partner-2.svg',class:'n-partner-elgi'},
+    {src:'assets/images/partner-3.svg',class:'n-partner-mak'},
+    {src:'assets/images/partner-4.svg',class:'n-partner-sevenf'},
+    {src:'assets/images/partner-5.svg',class:'n-partner-viseon'},
+    {src:'assets/images/partner-6.svg',class:'n-partner-fss'},
+    {src:'assets/images/partner-7.svg',class:'n-partner-hands'},
+    {src:'assets/images/partner-8.svg',class:'n-partner-sundaram'},
+  ];
+
+  topImages = [
+    {src:'assets/images/top-1.svg',class:'n-top-1'},
+    {src:'assets/images/top-2.svg',class:'n-top-2'},
+    {src:'assets/images/top-3.svg',class:'n-top-3'},
+    {src:'assets/images/top-4.svg',class:'n-top-4'},
+    {src:'assets/images/top-5.svg',class:'n-top-5'},
+    {src:'assets/images/top-6.svg',class:'n-top-6'},
+    {src:'assets/images/top-7.svg',class:'n-top-7'},
+    {src:'assets/images/top-8.svg',class:'n-top-8'},
+    {src:'assets/images/top-9.svg',class:'n-top-9'},
+    {src:'assets/images/top-10.svg',class:'n-top-10'},
+    {src:'assets/images/top-11.svg',class:'n-top-11'},
+    {src:'assets/images/top-12.svg',class:'n-top-12'},
+    {src:'assets/images/top-13.svg',class:'n-top-13'},
   ];
 
   hideFixedHeader = () => {

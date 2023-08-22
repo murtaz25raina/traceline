@@ -3,5 +3,6 @@ export interface CardMobileContent{
     description:String,
     list:String[],
     cardStyle:Object,
-    image:string
+    image:string,
+    imageBack:string
 }

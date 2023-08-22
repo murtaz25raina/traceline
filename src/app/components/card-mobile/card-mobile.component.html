@@ -4,7 +4,7 @@
         <div class="n-card-heading-mobile">{{cardMobileContent.heading}}</div>
         <div class="n-card-description-mobile">{{cardMobileContent.description}}</div>
       </div>
-      <div class="n-card-back-mobile" [style.backgroundImage]="cardMobileContent.image">
+      <div class="n-card-back-mobile" [style.backgroundImage]="cardMobileContent.imageBack">
         <div class="n-we-can-help-you-mobile">We can help you with:</div>
         <ul class="n-card-list-mobile">
             <li *ngFor="let list of cardMobileContent.list">{{list}}</li>

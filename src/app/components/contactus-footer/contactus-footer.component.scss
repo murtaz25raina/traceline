@@ -25,7 +25,7 @@
       .n-thank-you {
         color: white;
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 56px;
         font-style: normal;
         font-weight: 700;
@@ -33,7 +33,7 @@
       }
       .n-we-will-email-you {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 32px;
         font-style: normal;
         font-weight: 700;
@@ -41,7 +41,7 @@
       }
       .n-question-pricing {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -55,7 +55,7 @@
         height: fit-content;
         .n-email-input {
           color: #fff;
-          font-family: Lab Grotesque;
+          font-family: Graphik;
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
@@ -67,7 +67,7 @@
           border: 1px solid white;
           &::placeholder {
             color: #fff;
-            font-family: Lab Grotesque;
+            font-family: Graphik;
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -82,7 +82,7 @@
           cursor: pointer;
           color: #000;
           text-align: center;
-          font-family: Lab Grotesque;
+          font-family: Graphik;
           font-size: 16px;
           font-style: normal;
           font-weight: 700;
@@ -93,7 +93,7 @@
     .n-contact-info {
       .n-contact-text {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -101,7 +101,7 @@
       }
       .n-contact-email {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
@@ -110,7 +110,7 @@
       }
       .n-contact-phone {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
@@ -119,7 +119,7 @@
       }
       .n-social-text {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -161,7 +161,7 @@
         column-gap: 59px;
         .n-policy {
           color: #fff;
-          font-family: Lab Grotesque;
+          font-family: Graphik;
           font-size: 12px;
           font-style: normal;
           font-weight: 400;
@@ -172,7 +172,7 @@
       }
       .n-copyright {
         color: #fff;
-        font-family: Lab Grotesque;
+        font-family: Graphik;
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
@@ -182,7 +182,7 @@
     .n-powered-by-netcon {
       color: #fff;
       text-align: right;
-      font-family: Lab Grotesque;
+      font-family: Graphik;
       font-size: 12px;
       font-style: normal;
       font-weight: 400;
@@ -190,6 +190,7 @@
       text-decoration-line: underline;
       display: flex;
       align-items: flex-end;
+      cursor: pointer;
     }
   }
   .n-footer-horizontal-line {
@@ -312,7 +313,7 @@
         gap: 90px;
         .n-contact-text {
           color: #fff;
-          font-family: Lab Grotesque;
+          font-family: Graphik;
           font-size: 8px;
           font-style: normal;
           font-weight: 400;
@@ -321,7 +322,7 @@
         .n-contact-email,
         .n-contact-phone {
           color: #fff;
-          font-family: Lab Grotesque;
+          font-family: Graphik;
           font-size: 12px;
           font-style: normal;
           font-weight: 700;

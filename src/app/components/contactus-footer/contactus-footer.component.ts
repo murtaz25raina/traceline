@@ -25,6 +25,14 @@ export class ContactUsFooterComponent{
         this.isFormSubmitted = this.sharedService.isSubscribeFormSubmitted;
       }
 
+      scrollToTop(): void {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      toNetcon = () =>{
+        window.open("https://netcontechnologies.com","_blank");
+      }
+
       openLinkedin=()=>{
         window.open("https://www.linkedin.com/company/netcon-technologies","_blank")
       }

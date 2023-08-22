@@ -1,9 +1,10 @@
 <div class="n-container" [style.height]="elementHeight">
   <div class="n-page-logo-contact" *ngIf="fixedHeader">
     <img
-      src="assets/images/traceline-head-logo.png"
+      src="assets/images/traceline-head-logo.svg"
       alt="page-logo"
       class="n-page-logo"
+      routerLink="/"
       *ngIf="
         (scrollPosition < 90 && innerWidth > 550) ||
         (scrollPosition < 23 && innerWidth < 550)
@@ -44,12 +45,21 @@
   <div class="n-power-it-with-traceline" data-aos="fade-up">
     Manufacturing 4.0: Power it with Traceline.
   </div>
-  <img
+  <!-- <img
     src="assets/images/page-top-image.png"
     alt="power-it-with-traceline"
     class="n-page-top-image"
     data-aos="fade-up"
+  /> -->
+  <div class="n-page-top-image">
+    <img
+    *ngFor="let image of topImages"
+    [src]='image.src'
+    alt="power-it-with-traceline"
+    [class]='image.class'
+    data-aos="fade-up"
   />
+  </div>
   <div class="n-about-traceline" data-aos="fade-up">
     Traceline is the <span class="n-complete">complete</span> manufacturing OS
     that accelerates your transition into Industry 4.0, optimizing every facet
@@ -79,8 +89,9 @@
       Trusted by the best in the business
     </div>
     <div class="n-partners" data-aos="fade-up">
-      <span *ngFor="let partner of partners">
+      <span *ngFor="let partner of partners;let i=index">
         <img [src]="partner.src" alt="_partner_" [class]="partner.class" />
+
       </span>
     </div>
     <div class="n-flex-row n-text-number-container">
@@ -113,7 +124,7 @@
         </div>
         <div class="n-flex-column n-attribute" data-aos="fade-up">
           <span class="n-attribute-numbers">2x</span>
-          <span class="n-attribute-text">Return on investment in one year</span>
+          <span class="n-attribute-text">ROI in one year</span>
         </div>
       </div>
     </div>
@@ -155,7 +166,7 @@
       <img
         [src]="
           innerWidth > 1250
-            ? 'assets/images/guy-with-tablet.png'
+            ? 'assets/images/guy-with-tablet.svg'
             : 'assets/images/guy-with-tablet-tab.jpg'
         "
         alt="guy_with_tablet"
@@ -182,7 +193,8 @@
           cardStyle: {
             'margin-top': '40px'
           },
-          image: 'url(assets/images/guy-with-tablet-mob.png)'
+          image: 'url(assets/images/guy-with-tablet-mob.png)',
+          imageBack: 'url(assets/images/guy-with-tablet-mob-light.png)'
         }"
       ></app-card-mobile>
     </ng-template>
@@ -226,7 +238,8 @@
           description:
             'Maximize efficiency with Traceline\'s OEE module. Measure performance, schedule preventive maintenance, and monitor asset health to ensure optimal functioning.',
           cardStyle: {},
-          image: 'url(assets/images/man-with-blue-cap.png)'
+          image: 'url(assets/images/man-with-blue-cap.png)',
+          imageBack: 'url(assets/images/man-with-blue-cap-light.png)',
         }"
       ></app-card-mobile>
     </ng-template>
@@ -278,6 +291,7 @@
           'margin-top' :'16px'
         },
           image: 'url(assets/images/woman-working.png)',
+          imageBack: 'url(assets/images/woman-working-light.png)',
       }"
       ></app-card-mobile>
     </ng-template>
@@ -290,7 +304,7 @@
     <img
       [src]="
         innerWidth > 1250
-          ? 'assets/images/ship.png'
+          ? 'assets/images/ship.svg'
           : 'assets/images/ship-tab.jpg'
       "
       alt="ship_carrying_goods"
@@ -331,7 +345,8 @@
         cardStyle: {
           'margin-top': '32px'
         },
-        image: 'url(assets/images/ship-mob.png)'
+        image: 'url(assets/images/ship-mob.png)',
+        imageBack: 'url(assets/images/ship-mob-light.png)'
       }"
     ></app-card-mobile>
   </ng-template>
@@ -386,6 +401,7 @@
             'Empower your service teams with Traceline\'s Service Management Platform. Smart scheduling, predictive maintenance, and real-time visibility make service seamless.',
           cardStyle: {},
           image: 'url(assets/images/man-with-white-cap.png)',
+          imageBack: 'url(assets/images/man-with-white-cap-light.png)',
         }"
       ></app-card-mobile>
     </ng-template>
@@ -435,7 +451,7 @@
             'margin-top':'16px'
           },
           image: 'url(assets/images/buildings-at-night.png)',
-            
+          imageBack: 'url(assets/images/buildings-at-night-light.png)',
         }"
       ></app-card-mobile>
     </ng-template>
@@ -462,7 +478,7 @@
     <img
       [src]="
         innerWidth > 1250
-          ? 'assets/images/smiling-man.png'
+          ? 'assets/images/smiling-man.svg'
           : 'assets/images/smiling-man-tab.jpg'
       "
       alt="guy_with_tablet"
@@ -487,7 +503,8 @@
         cardStyle: {
           'margin-top': '16px'
         },
-        image: 'url(assets/images/smiling-man-mob.png)'
+        image: 'url(assets/images/smiling-man-mob.png)',
+        imageBack: 'url(assets/images/smiling-man-mob-light.png)',
       }"
     ></app-card-mobile>
   </ng-template>
@@ -502,7 +519,7 @@
       waiting for. Welcome to the future of manufacturing excellence.
     </div>
     <img
-      src="assets/images/three-people-looking-at-tablet.png"
+      src="assets/images/three-people-looking-at-tablet.svg"
       alt="three-people-looking-at-tablet"
       class="n-three-people-looking-at-tablet"
       data-aos="fade-up"
@@ -556,7 +573,7 @@
           class="n-swinging-doodle-img"
         />
         <div>
-          <div class="n-swinging-doodle-heading">Improve time to value</div>
+          <div class="n-swinging-doodle-heading">Embrace sustainability</div>
           <div class="n-swinging-doodle-description">
             In an era where sustainability is key, Traceline champions
             eco-friendly manufacturing. Streamlining processes, cutting waste,
